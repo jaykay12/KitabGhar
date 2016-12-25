@@ -56,7 +56,87 @@
         <servlet-name>connectionFile</servlet-name>
         <url-pattern>/connectionfile</url-pattern>
     </servlet-mapping>
-   
+
+
+    <servlet>
+        <servlet-name>AdminAddBooks</servlet-name>
+        <jsp-file>/AdminAddBooks.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminAddBooks</servlet-name>
+        <url-pattern>/adminaddbooks</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>AdminHandle</servlet-name>
+        <jsp-file>/AdminHandle.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminHandle</servlet-name>
+        <url-pattern>/adminhandle</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>AdminRemoveBooks</servlet-name>
+        <jsp-file>/AdminRemoveBooks.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminRemoveBooks</servlet-name>
+        <url-pattern>/adminremovebooks</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>AdminRemoveUsers</servlet-name>
+        <jsp-file>/AdminRemoveUsers.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminRemoveUsers</servlet-name>
+        <url-pattern>/adminremoveusers</url-pattern>
+    </servlet-mapping>
+
+
+<servlet>
+        <servlet-name>AdminShowLibrary</servlet-name>
+        <jsp-file>/AdminShowLibrary.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminShowLibrary</servlet-name>
+        <url-pattern>/adminshowlibrary</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>AdminShowUserDetails</servlet-name>
+        <jsp-file>/AdminShowUserDetails.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminShowUserDetails</servlet-name>
+        <url-pattern>/adminshowuserdetails</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>AdminShowUsers</servlet-name>
+        <jsp-file>/AdminShowUsers.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminShowUsers</servlet-name>
+        <url-pattern>/adminshowusers</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>AdminUpdateBooks</servlet-name>
+        <jsp-file>/AdminUpdateBooks.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminUpdateBooks</servlet-name>
+        <url-pattern>/adminupdatebooks</url-pattern>
+    </servlet-mapping>
+
 
 	<servlet>
         <servlet-name>Footer</servlet-name>
@@ -109,6 +189,36 @@
 
 
 	<servlet>
+        <servlet-name>HomeLibrary</servlet-name>
+        <jsp-file>/HomeLibrary.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeLibrary</servlet-name>
+        <url-pattern>/homelibrary</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>HomeLibraryBookDetails</servlet-name>
+        <jsp-file>/HomeLibraryBookDetails.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeLibraryBookDetails</servlet-name>
+        <url-pattern>/homelibrarybookdetails</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>HomeLibraryBookReviews</servlet-name>
+        <jsp-file>/HomeLibraryBookReviews.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeLibraryBookReviews</servlet-name>
+        <url-pattern>/homelibrarybookreviews</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
         <servlet-name>HomeMission</servlet-name>
         <jsp-file>/HomeMission.jsp</jsp-file>
     </servlet>
@@ -139,12 +249,132 @@
 
 
 	<servlet>
+        <servlet-name>Sorry</servlet-name>
+        <jsp-file>/Sorry.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Sorry</servlet-name>
+        <url-pattern>/sorry</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>UserChangePassword</servlet-name>
+        <jsp-file>/UserChangePassword.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserChangePassword</servlet-name>
+        <url-pattern>/userchangepassword</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
         <servlet-name>UserDashboard</servlet-name>
         <jsp-file>/UserDashboard.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserDashboard</servlet-name>
         <url-pattern>/userdashboard</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>UserLibrary</servlet-name>
+        <jsp-file>/UserLibrary.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLibrary</servlet-name>
+        <url-pattern>/userlibrary</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>UserLibraryBookDetails</servlet-name>
+        <jsp-file>/UserLibraryBookDetails.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLibraryBookDetails</servlet-name>
+        <url-pattern>/userlibrarybookdetails</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>UserLibraryBuyBooks</servlet-name>
+        <jsp-file>/UserLibraryBuyBooks.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLibraryBuyBooks</servlet-name>
+        <url-pattern>/userlibrarybuybooks</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>UserLibraryConfirmBuy</servlet-name>
+        <jsp-file>/UserLibraryConfirmBuy.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLibraryConfirmBuy</servlet-name>
+        <url-pattern>/userlibraryconfirmbuy</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>UserProfile</servlet-name>
+        <jsp-file>/UserProfile.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserProfile</servlet-name>
+        <url-pattern>/userprofile</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>UserShelf</servlet-name>
+        <jsp-file>/UserShelf.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserShelf</servlet-name>
+        <url-pattern>/usershelf</url-pattern>
+    </servlet-mapping>
+
+
+	  <servlet>
+        <servlet-name>UserShelfBookDetails</servlet-name>
+        <jsp-file>/UserShelfBookDetails.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserShelfBookDetails</servlet-name>
+        <url-pattern>/usershelfbookdetails</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>UserShelfBookReviews</servlet-name>
+        <jsp-file>/UserShelfBookReviews.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserShelfBookReviews</servlet-name>
+        <url-pattern>/usershelfbookreviews</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>UserUpdateProfile</servlet-name>
+        <jsp-file>/UserUpdateProfile.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserUpdateProfile</servlet-name>
+        <url-pattern>/userupdateprofile</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>UploaderDp</servlet-name>
+        <servlet-class>UploaderDp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploaderDp</servlet-name>
+        <url-pattern>/UploaderDp</url-pattern>
     </servlet-mapping>
 
 
