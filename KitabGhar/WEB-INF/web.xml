@@ -218,6 +218,7 @@
     </servlet-mapping>
 
 
+
 	<servlet>
         <servlet-name>UserChangePassword</servlet-name>
         <jsp-file>/UserChangePassword.jsp</jsp-file>
@@ -255,6 +256,16 @@
     <servlet-mapping>
         <servlet-name>UserUpdateProfile</servlet-name>
         <url-pattern>/userupdateprofile</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>UploaderDp</servlet-name>
+        <servlet-class>UploaderDp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploaderDp</servlet-name>
+        <url-pattern>/UploaderDp</url-pattern>
     </servlet-mapping>
 
 

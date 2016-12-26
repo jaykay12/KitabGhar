@@ -25,7 +25,15 @@
                 
         try{
             
-
+//-----------------------------------Updating the profile picture--------------------------------
+       String filename="";
+       if(request.getParameter("fn")!=null)
+       {
+           filename = request.getParameter("fn");
+           String qry = "update users set profilepic='"+filename+"' where userid='"+useridpassed+"'";
+           int result = smt.executeUpdate(qry);
+       }
+       else if(request.getParameter("fn")==null)
        {
             
 //------------------------------------Update the name---------------------------------------                
@@ -103,7 +111,18 @@
             { 
             %>
         
-        
+        <form action="UploaderDp" method="post" enctype="multipart/form-data">
+            <div style="height: 440px; width:50%; float: left">
+                <fieldset style="size: 350px; text-align: center">
+                    <legend> Profile Picture </legend>
+                    <img src="profilepics/<%= rs.getString(9)%>" height="300px" width="300px">
+                        <br>
+                        <input type="file" name="dpUploader">
+                        <br>
+                        <center><input type="submit" value="Change Profile Picture" name="btnChangeDp"></center>
+                </fieldset>
+            </div>
+        </form>
             
             
             
