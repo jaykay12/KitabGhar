@@ -188,7 +188,6 @@
     </servlet-mapping>
 
 
-
 	<servlet>
         <servlet-name>HomeMission</servlet-name>
         <jsp-file>/HomeMission.jsp</jsp-file>
@@ -218,7 +217,8 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
-    <servlet>
+
+	<servlet>
         <servlet-name>UserChangePassword</servlet-name>
         <jsp-file>/UserChangePassword.jsp</jsp-file>
     </servlet>
@@ -227,6 +227,7 @@
         <url-pattern>/userchangepassword</url-pattern>
     </servlet-mapping>
 
+
 	<servlet>
         <servlet-name>UserDashboard</servlet-name>
         <jsp-file>/UserDashboard.jsp</jsp-file>
@@ -234,6 +235,26 @@
     <servlet-mapping>
         <servlet-name>UserDashboard</servlet-name>
         <url-pattern>/userdashboard</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>UserProfile</servlet-name>
+        <jsp-file>/UserProfile.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserProfile</servlet-name>
+        <url-pattern>/userprofile</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>UserUpdateProfile</servlet-name>
+        <jsp-file>/UserUpdateProfile.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserUpdateProfile</servlet-name>
+        <url-pattern>/userupdateprofile</url-pattern>
     </servlet-mapping>
 
 
