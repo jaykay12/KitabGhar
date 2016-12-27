@@ -189,6 +189,36 @@
 
 
 	<servlet>
+        <servlet-name>HomeLibrary</servlet-name>
+        <jsp-file>/HomeLibrary.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeLibrary</servlet-name>
+        <url-pattern>/homelibrary</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>HomeLibraryBookDetails</servlet-name>
+        <jsp-file>/HomeLibraryBookDetails.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeLibraryBookDetails</servlet-name>
+        <url-pattern>/homelibrarybookdetails</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>HomeLibraryBookReviews</servlet-name>
+        <jsp-file>/HomeLibraryBookReviews.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeLibraryBookReviews</servlet-name>
+        <url-pattern>/homelibrarybookreviews</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
         <servlet-name>HomeMission</servlet-name>
         <jsp-file>/HomeMission.jsp</jsp-file>
     </servlet>
@@ -216,7 +246,6 @@
         <servlet-name>Register</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
-
 
 
 	<servlet>
