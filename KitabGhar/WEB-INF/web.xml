@@ -269,6 +269,26 @@
 
 
 	<servlet>
+        <servlet-name>UserLibrary</servlet-name>
+        <jsp-file>/UserLibrary.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLibrary</servlet-name>
+        <url-pattern>/userlibrary</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>UserLibraryBookDetails</servlet-name>
+        <jsp-file>/UserLibraryBookDetails.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLibraryBookDetails</servlet-name>
+        <url-pattern>/userlibrarybookdetails</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
         <servlet-name>UserProfile</servlet-name>
         <jsp-file>/UserProfile.jsp</jsp-file>
     </servlet>
