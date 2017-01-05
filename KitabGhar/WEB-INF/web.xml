@@ -249,6 +249,16 @@
 
 
 	<servlet>
+        <servlet-name>Sorry</servlet-name>
+        <jsp-file>/Sorry.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Sorry</servlet-name>
+        <url-pattern>/sorry</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
         <servlet-name>UserChangePassword</servlet-name>
         <jsp-file>/UserChangePassword.jsp</jsp-file>
     </servlet>
@@ -289,6 +299,26 @@
 
 
 	<servlet>
+        <servlet-name>UserLibraryBuyBooks</servlet-name>
+        <jsp-file>/UserLibraryBuyBooks.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLibraryBuyBooks</servlet-name>
+        <url-pattern>/userlibrarybuybooks</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
+        <servlet-name>UserLibraryConfirmBuy</servlet-name>
+        <jsp-file>/UserLibraryConfirmBuy.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLibraryConfirmBuy</servlet-name>
+        <url-pattern>/userlibraryconfirmbuy</url-pattern>
+    </servlet-mapping>
+
+
+	<servlet>
         <servlet-name>UserProfile</servlet-name>
         <jsp-file>/UserProfile.jsp</jsp-file>
     </servlet>
@@ -296,7 +326,6 @@
         <servlet-name>UserProfile</servlet-name>
         <url-pattern>/userprofile</url-pattern>
     </servlet-mapping>
-
 
     <servlet>
         <servlet-name>UserUpdateProfile</servlet-name>
