@@ -327,6 +327,37 @@
         <url-pattern>/userprofile</url-pattern>
     </servlet-mapping>
 
+
+	<servlet>
+        <servlet-name>UserShelf</servlet-name>
+        <jsp-file>/UserShelf.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserShelf</servlet-name>
+        <url-pattern>/usershelf</url-pattern>
+    </servlet-mapping>
+
+
+	  <servlet>
+        <servlet-name>UserShelfBookDetails</servlet-name>
+        <jsp-file>/UserShelfBookDetails.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserShelfBookDetails</servlet-name>
+        <url-pattern>/usershelfbookdetails</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>UserShelfBookReviews</servlet-name>
+        <jsp-file>/UserShelfBookReviews.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserShelfBookReviews</servlet-name>
+        <url-pattern>/usershelfbookreviews</url-pattern>
+    </servlet-mapping>
+
+
     <servlet>
         <servlet-name>UserUpdateProfile</servlet-name>
         <jsp-file>/UserUpdateProfile.jsp</jsp-file>
