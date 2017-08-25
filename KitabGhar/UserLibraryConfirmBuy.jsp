@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : UserLibraryConfirmBuy
     Created on : 22 Aug, 2016, 12:46:20 AM
     Author     : Jalaz
@@ -16,18 +16,20 @@
       <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidProfile.jsp" %>
         <%@include file="connectionFile.jsp" %>
-        
+
         <div style="height: 440px; width: 100%">
             <h1> <b><center> PROCESSING... </center></b></h1>
-        
+
         <%! String Source=""; %>
-        
+
         <%
             String fid="";
             String bookid="";
+            String checkbookid="";
+            int flagToBuy = 0;
             int newBalance,currentBalance,price;
             int tid;
-            String SuccessMessage="", ErrorMessage="";
+            String SuccessMessage="", ErrorMessage="", WarningMessage="";
             if(request.getParameter("id")!=null)
             {
                 fid = request.getParameter("id");
@@ -38,18 +40,35 @@
                 bookid = rs1.getString(1);
                 price = rs1.getInt(8);
                 //out.println(bookid);
-                
+
                 String qry2 = "select * from users where userid='"+useridpassed+"'";
                 ResultSet rs2 = smt.executeQuery(qry2);
                 Boolean b2 = rs2.next();
                 //out.println(b2);
-                
-                currentBalance = rs2.getInt(8);  
+
+                currentBalance = rs2.getInt(8);
                 newBalance = currentBalance - price ;
-                //out.println(newBalance);
-                
-                if(newBalance > 0)
-                { 
+                out.println(newBalance);
+
+                String qry5 = "select bookid from shelfs where userid='"+useridpassed+"'";
+                ResultSet rs5 = smt.executeQuery(qry5);
+                while(rs5.next())
+                {
+                  checkbookid = rs5.getString(1);
+                  if(checkbookid.equals(bookid))
+                  {
+                    flagToBuy = 1;
+                    break;
+                  }
+                }
+
+                if(flagToBuy == 1)
+                {
+                  WarningMessage = "Beware...!!! You already have the selected book in your shelf";
+                  Source = "Thinking.png";
+                }
+                else if(newBalance >= 0)
+                {
                     String qry3 = "update users set tokens="+newBalance+" where userid='"+useridpassed+"'";
                     int handler = smt.executeUpdate(qry3);
                     if(handler > 0)
@@ -58,7 +77,7 @@
                         tid = (100000+r.nextInt(99999));
                         String qry4 = "insert into shelfs values("+tid+",'"+bookid+"','"+useridpassed+"',0)";
                         int result =  smt.executeUpdate(qry4);
-                
+
                             if(result>0)
                             {
                                 SuccessMessage = "Congratulations...!!! Book Successfully Purchased, Added to your personal shelf";
@@ -67,16 +86,16 @@
                             else
                             {
                                 ErrorMessage = "Sorry, for the inconvenience...!! Money Debited, Error in Transaction. Money will be refundede Soon..";
-                                Source = "Sorry.jpg";
+                                Source = "Sorry.png";
                             }
                         }
                 }
                 else
                 {
                     ErrorMessage = "Sorry Subscriber...!! Insufficient Balance to make this purchase";
-                    Source = "NeedCash.jpg";
+                    Source = "NeedCash.png";
                 }
-                
+
             }
             con.close();
              %>
@@ -84,8 +103,9 @@
                 <img src="ProjectImages/<%= Source%>" height="300px" width="300px">
                 <b><h4 style="color:green"><%= SuccessMessage %></h4></b>
                 <b><h4 style="color:red"><%= ErrorMessage %></h4></b>
+                <b><h4 style="color:orange"><%= WarningMessage %></h4></b>
              </center>
-        </div>       
+        </div>
         <%@include file="Footer.jsp" %>
     </body>
 </html>

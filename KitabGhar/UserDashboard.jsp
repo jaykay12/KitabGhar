@@ -29,14 +29,17 @@
                         </a>
                     </td>
                     <td>
+                      <a href="UserShowNewsfeed.jsp"
                         News Feed
                     </td>
                 </tr>
                 <tr>
                     <td>
+                      <a href="UserConnections.jsp"
                         Connections
                     </td>
                     <td>
+                      <a href="UserSearch.jsp"
                         Look for a friend
                     </td>
                     <td>
@@ -52,8 +55,8 @@
                     </td>
                     <td></td>
                 </tr>
-            </table>            
-            
+            </table>
+
         </div>
         <%@include file="Footer.jsp" %>
     </body>
