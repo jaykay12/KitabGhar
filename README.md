@@ -1,2 +1,3 @@
 # KitabGhar
-An online eBook Portal build on Java Servlets and JSP
+An online eBook Portal (BookHouse) build on Java Servlets and JSP.
+Web Application
