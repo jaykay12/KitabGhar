@@ -30,8 +30,6 @@
                             <select name="tbSearchFilter">
                                 <option value="">ALL SECTIONS-(No Filters)</option>
                                 <option value="Academic">ACADEMIC SECTION</option>
-                                <option value="ChildrenBooks">CHILDREN SECTION</option>
-                                <option value="Comics">COMIC SECTION</option>
                                 <option value="Novel">NOVEL SECTION</option>
                                 <option value="Programming">PROGRAMMING SECTION</option>
                             </select>
@@ -163,7 +161,7 @@
                                                 %>
                     <td>
                         <table border="0px">
-                            <tr><td><img src="bookpics/<%= category%>/<%= subcategory%>/<%=coverpic%>" height="150px" width="150px"></td></tr>
+                            <tr><td><img src="bookpics/<%=coverpic%>" height="150px" width="150px"></td></tr>
                             <tr><td><%= name %></td></tr>
                             <tr><td><%= author %></td></tr>
                             <tr><td><a href="HomeLibraryBookDetails.jsp?id=<%=rs1.getString(7) %>"> Click to get details </a></td></tr>

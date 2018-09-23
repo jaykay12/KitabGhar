@@ -17,7 +17,7 @@
         <%@include file="connectionFile.jsp" %>
         
         <%
-            String bookid="",name="",author="",publication="",category="",subcategory="";
+            String bookid="", name="", author="", publication="", category="", subcategory="";
             int queryid,price;
             String SuccessMessage="", ErrorMessage="";
             String coverpic="",downloadlink="";
@@ -122,9 +122,7 @@
                                 <select name="tbCategory">
                                     <option value="None">----Select----</option>
                                     <option value="Academic">Academic</option>
-                                    <option value="ChildrenBooks">Children Books</option>
-                                    <option value="Comics">Comics</option>
-                                    <option value="Novel">Novel</option>
+                                    <option value="Novel">Novels</option>
                                     <option value="Programming">Programming</option>
                                 </select>                                   
                             </td>
@@ -136,15 +134,32 @@
                             <td>
                                 <select name="tbSubCategory">
                                     <option value="None">----Select----</option>
-                                    <option value="Engineering">ACADEMIC: Engineering</option>
-                                    <option value="GATE">ACADEMIC: GATE</option>
-                                    <option value="JEEAdvanced">ACADEMIC: JEE Advanced</option>
-                                    <option value="Medical">ACADEMIC: Medical</option>
-                                    <option value="English">English</option>
-                                    <option value="Hindi">Hindi</option>
-                                    <option value="Romantic">NOVEL: Romantic</option>
-                                    <option value="LAMPStack">PROGRAMMING: LAMP Stack</option>
-                                    <option value="WebDesigning">PROGRAMMING: Web Designing</option>
+                                    <option value="CG">ACADEMIC: Computer Graphics</option>
+                                    <option value="OS">ACADEMIC: Operating System</option>
+                                    <option value="DBMS">ACADEMIC: Operating System</option>
+                                    <option value="TOC">ACADEMIC: TOC and Compiler</option>
+                                    <option value="DSAlgo">ACADEMIC: Data Structures and Algorithms</option>
+                                    <option value="NonCSE">ACADEMIC: Non-CSE Branches</option>
+                                    <option value="Crypto">ACADEMIC: Information Security and Cryptography</option>
+                                    <option value="ML">ACADEMIC: Machine Learning and Soft Computing</option>
+                                    <option value="SE">ACADEMIC: Software Engineering</option>
+                                    <option value="Sim">ACADEMIC: Simulation</option>
+                                    <option value="CO">ACADEMIC: Computer Architecture</option>
+                                    <option value="CN">ACADEMIC: Computer Networks</option>
+                                    <option value="Maths">ACADEMIC: Engineering Maths</option>
+                                    <option value="DS">ACADEMIC: Discrete Structures</option>
+                                    <option value="InNew">NOVEL: Indian Young Writers</option>
+                                    <option value="InOld">NOVEL: Indian Old Writers</option>
+                                    <option value="Foreign">NOVEL: Foreign Writers</option>
+                                    <option value="CPP">PROGRAMMING: C and C++</option>
+                                    <option value="PHP">PROGRAMMING: PHP</option>
+                                    <option value="Java">PROGRAMMING: Java and J2EE</option>
+                                    <option value="UI">PROGRAMMING: Frontend Technologies</option>
+                                    <option value="Python">PROGRAMMING: Python</option>
+                                    <option value="JS">PROGRAMMING: JavaScript</option>
+                                    <option value="Ruby">PROGRAMMING: Ruby</option>
+                                    <option value="Linux">PROGRAMMING: Linux</option>
+                                    <option value="Android">PROGRAMMING: Android</option>
                                 </select>  
                             </td>
                         </tr>

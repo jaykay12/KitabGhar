@@ -20,7 +20,7 @@ public class UploaderDp extends HttpServlet {
 
         try {
 
-            MultipartRequest mrequest = new MultipartRequest(request, "C:\\xampp\\tomcat\\webapps\\eBookalya\\profilepics");
+            MultipartRequest mrequest = new MultipartRequest(request, "/home/jaykay12/Documents/Github/KitabGhar/KitabGhar/profilepics");
 
             String filename = mrequest.getFilesystemName("dpUploader");
 
@@ -28,7 +28,7 @@ public class UploaderDp extends HttpServlet {
         }
         catch(Exception ex)
         {
-
+        	System.out.println("Exception Thrown:"+ex);
         }
     }
 
