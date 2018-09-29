@@ -125,18 +125,22 @@
 
             size=0;
             subsize=0;
-            if(rs1 != null)
+            if(rs1.next()==false)
+            {
+                out.println("<h1 style="+"margin-top:50px;margin-bottom:250px;"+"><center>Shelf Is Empty..! Kindly Add books from the library.</center></h1>");
+            }
+            else if(rs1 != null)
             {
                 rs1.beforeFirst();
                 rs1.last();
                 size=rs1.getRow();
-            }
-            subsize = size % 6;
-            size = size/6;
+            
+                subsize = size % 6;
+                size = size/6;
 
-            looplimiter = 6;
+                looplimiter = 6;
 
-            rs1.beforeFirst();
+                rs1.beforeFirst();
             %>
 
             <table border="1 px" cellspacing="50px">
@@ -175,7 +179,8 @@
                 </tr>
                 <% } %>
             </table>
-    <%    }  %>
+    <%  }
+      }  %>
 <%-- ------------------------------------------------------------------------------------------------------ --%>        
  
         <% con.close(); %>

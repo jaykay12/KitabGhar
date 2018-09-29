@@ -13,40 +13,59 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+        <script src="js/jquery-3.3.1.js"></script>
+
+        <script>
+            $(document).ready(function(){
+            // Check Radio-box
+            $(".rating input:radio").attr("checked", false);
+
+            $('.rating input').click(function () {
+                $(".rating span").removeClass('checked');
+                $(this).parent().addClass('checked');
+                });
+
+            $('input:radio').change(
+            function(){
+                var userRating = this.value;
+                }); 
+            });
+        </script>
+
         <title>JSP Page</title>
     </head>
     <body>
         <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidProfile.jsp" %>
         <%@include file="connectionFile.jsp" %>
-        <div style="height: 400px; width: 100%;" >
+        <fieldset style="width: 100%; text-align: center">
+        <div style="height: 350px; width: 100%;" >
             
         <%
-            //String qry = "select * from users where userid='"+useridpassed+"'";
             String fid="";
             if(request.getParameter("id")!=null)
             {
                 fid = request.getParameter("id");
                 String qry = "select * from books where queryid='"+fid+"'";
                 ResultSet rs = smt.executeQuery(qry);
-            
-                
-            if(rs.next())
-            {
-             
-            %>
+                 
+                if(rs.next())
+                {
+                    
+        %>
         
-        
-            <div style="height: 400px; width:50%; float: left">
+            <div style="height: 350px; width:30%; float: left">
                 <fieldset style="size: 350px; text-align: center">
                     <legend> Cover Page </legend>
-                        <img src="bookpics/<%= rs.getString(5)%>/<%= rs.getString(6)%>/<%= rs.getString(9)%>" height="300px" width="300px">
+                        <img src="bookpics/<%= rs.getString(9)%>" height="300px" width="60%">
                 </fieldset>
             </div>
-            <div style="height: 380px; width:50%; float: left; text-align: left">
+            <div style="height: 330px; width:30%; float: left; text-align: left">
                 <hr>
                 <h2><center>Book Details</center></h2>
-                <table width="70%" height="250px" border="0px" style="margin-left: 20px" >                  
+                <table width="70%" height="250px" border="0px" style="margin-left: 5%" >                  
                     <tr>
                         <td>Book Id: </td>
                         <td> <%= rs.getString(1) %></td>
@@ -80,15 +99,56 @@
                 <br>
                 <br>
             </div>
-       
+
+
+            <div style="height: 350px; width:35%; float: left">
+                <fieldset style="width: 90%; text-align: center">
+                    <legend> Rating & Reviews </legend>
+                        <form name="reviewForm" method="post" id="formRating" action="reviewSubmitServlet">
+                            <br>
+                            <div class="rating" style="margin-right: 100px;">
+                                <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
+                                <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
+                                <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
+                                <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
+                                <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+                            </div>
+                            <br>
+                            <div class="review-box" style="width:90%; height:200px; margin-top:50px;">
+                                <textarea type="text" name="reviewBox" id="review" rows="5" cols="50">Your Review Here, </textarea>
+                            </div>
+                            <div class="btnSubmitReview" style="width:100%;">
+                                <input type="submit" name="btnSubmit" id="btnSubmit"/>
+                            </div>
+                            
+
+                        </form>
+                        <script type="text/javascript">
+                            $('#formRating').submit(function(eventObj) {
+                                $(this).append('<input type="hidden" name="userid" value="<%= userid %>" /> ');
+                                $(this).append('<input type="hidden" name="bookid" value="<%= rs.getString(1) %>" /> ');
+                                console.log("Done:");
+                                return true;
+                            });
+                        </script>
+                        
+                </fieldset>
+            </div>
         </div>
+        
         <div style="height: 40px; width: 100%; text-align: center">
             <h2><a href="UserLibraryBuyBook.jsp?id=<%= rs.getString(7) %>"> Add to Shelf </a></h2>
             <h2><a href="HomeLibraryBookReviews.jsp?id=<%= rs.getString(7) %>"> Reviews </a> </h2>
         </div>
+
         
-         <% } 
-            } %>
+
+        </fieldset>
+
+            <% } 
+        } %>
+
+    
         <%@include file="Footer.jsp" %>
     </body>
 </html>

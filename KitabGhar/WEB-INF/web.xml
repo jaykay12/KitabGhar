@@ -327,6 +327,15 @@
         <url-pattern>/userprofile</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UserRecommendation</servlet-name>
+        <jsp-file>/UserRecommendation.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserRecommendation</servlet-name>
+        <url-pattern>/userRecommendation</url-pattern>
+    </servlet-mapping>
+
 
 	<servlet>
         <servlet-name>UserShelf</servlet-name>
@@ -375,6 +384,15 @@
     <servlet-mapping>
         <servlet-name>UploaderDp</servlet-name>
         <url-pattern>/UploaderDp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>reviewSubmitServlet</servlet-name>
+        <servlet-class>reviewSubmitServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>reviewSubmitServlet</servlet-name>
+        <url-pattern>/reviewSubmitServlet</url-pattern>
     </servlet-mapping>
 
 
