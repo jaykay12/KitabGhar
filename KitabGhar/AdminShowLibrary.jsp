@@ -53,7 +53,7 @@
         %>
             <tr>
                 <td><%= bookid %></td>
-                <td><img src="bookpics/<%= category%>/<%= subcategory%>/<%=coverpic%>" height="100px" width="100px">
+                <td><img src="bookpics/<%=coverpic%>" height="100px" width="100px">
                 <td><%= name %></td>
                 <td><%= author %></td>
                 <td><%= publication %></td>

@@ -9,55 +9,28 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
         <title>JSP Page</title>
     </head>
     <body>
         <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidProfile.jsp" %>
         <%@include file="connectionFile.jsp" %>
-        <div style="height: 420px; width: 100%;" align="center">
-            <table width="400px" height="400px" style="margin-top: 40px">
-                <tr>
-                    <td>
-                        <a href="UserLibrary.jsp">
-                        Library
-                        </a>
-                    </td>
-                    <td>
-                        <a href="UserShelf.jsp">
-                        My Shelf
-                        </a>
-                    </td>
-                    <td>
-                      <a href="UserShowNewsfeed.jsp"
-                        News Feed
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                      <a href="UserConnections.jsp"
-                        Connections
-                    </td>
-                    <td>
-                      <a href="UserSearch.jsp"
-                        Look for a friend
-                    </td>
-                    <td>
-                        Settings
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <a href="Logout.jsp">
-                        Log Out
-                        </a>
-                    </td>
-                    <td></td>
-                </tr>
-            </table>
 
+        <div class="row" style="margin-top: 100px; margin-bottom: 250px; text-align:center;">
+            <div class="col-md-4 dashboard-rows">
+                <div class="btn btn-outline-primary" onclick="location.href = 'UserLibrary.jsp';">Library</div>
+            </div>
+            <div class="col-md-4 dashboard-rows">
+                <div class="btn btn-outline-primary" onclick="location.href = 'UserShelf.jsp';">Personal Shelf</div>
+            </div>
+            <div class="col-md-4 dashboard-rows">
+                <div class="btn btn-outline-primary" onclick="location.href = 'UserRecommendation.jsp';">Recommendations</div>
+            </div>
         </div>
+        
         <%@include file="Footer.jsp" %>
     </body>
 </html>
