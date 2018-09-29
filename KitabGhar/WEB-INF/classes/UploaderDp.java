@@ -16,7 +16,9 @@ public class UploaderDp extends HttpServlet {
 
             MultipartRequest mrequest = new MultipartRequest(request, "/home/jaykay12/Documents/Github/KitabGhar/KitabGhar/profilepics");
 
-            String filename = mrequest.getFilesystemName("dpUploader");
+            String filename = mrequest.getFilesystemName("uploadedFile");
+
+            System.out.println(filename);
 
             response.sendRedirect("UserUpdateProfile.jsp?fn="+filename);
         }

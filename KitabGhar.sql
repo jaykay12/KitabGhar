@@ -84,10 +84,9 @@ CREATE TABLE `reviews` (
   `reviewid` varchar(20) NOT NULL,
   `bookid` varchar(20) NOT NULL,
   `userid` varchar(20) NOT NULL,
-  `date` date NOT NULL,
-  `timing` time NOT NULL,
   `review` varchar(1000) DEFAULT NULL,
   `rating` int(11) NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`reviewid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -98,6 +97,7 @@ CREATE TABLE `reviews` (
 
 LOCK TABLES `reviews` WRITE;
 /*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
+INSERT INTO `reviews` VALUES ('jalaz.kumarACAD1000','ACAD1000','jalaz.kumar','Really Good Book, for Academic Purposes.',4,'2018-09-30 02:53:28'),('jalaz.kumarACAD1001','ACAD1001','jalaz.kumar','Too Hard to grasp up.',2,'2018-09-30 02:53:49'),('jalaz.kumarACAD1002','ACAD1002','jalaz.kumar','Wonderful Book, for basic of Data Structures & Algorithms. Good for Advanced level as well.',5,'2018-09-30 02:54:34'),('jalaz.kumarACAD1003','ACAD1003','jalaz.kumar','Nice Book, on Soft Computing. Indian Writers always Rocks.',4,'2018-09-30 02:55:06'),('jalaz.kumarACAD1004','ACAD1004','jalaz.kumar','Your Review Here, ',4,'2018-09-30 02:55:18'),('jalaz.kumarACAD1005','ACAD1005','jalaz.kumar','',2,'2018-09-30 02:55:30'),('jalaz.kumarACAD1008','ACAD1008','jalaz.kumar','Not good for learners. Highly recommended for experts.',1,'2018-09-30 02:56:01'),('jalaz.kumarACAD1010','ACAD1010','jalaz.kumar','Excellent book on Data Mining & AI. Used for the course curriculum of NITH',4,'2018-09-30 02:57:17');
 /*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,6 +122,7 @@ CREATE TABLE `shelfs` (
 
 LOCK TABLES `shelfs` WRITE;
 /*!40000 ALTER TABLE `shelfs` DISABLE KEYS */;
+INSERT INTO `shelfs` VALUES (100576,'PROG1005','saurabh.kumar'),(102946,'NOV1015','jalaz.kumar'),(107677,'PROG1009','jalaz.kumar'),(123131,'ACAD1030','bimal.lauhney'),(125633,'PROG1023','jalaz.kumar'),(130490,'PROG1030','sukhbir.singh'),(132247,'PROG1003','saurabh.kumar'),(146188,'ACAD1009','sukhbir.singh'),(151886,'PROG1012','bimal.lauhney'),(156265,'ACAD1004','bimal.lauhney'),(167179,'NOV1046','bimal.lauhney'),(168023,'PROG1004','sukhbir.singh'),(170811,'NOV1033','sukhbir.singh'),(171297,'NOV1046','jalaz.kumar'),(177939,'ACAD1042','bimal.lauhney'),(184311,'PROG1013','sukhbir.singh'),(187625,'PROG1011','sukhbir.singh'),(188858,'PROG1023','bimal.lauhney'),(189088,'PROG1023','sukhbir.singh'),(189923,'NOV1017','saurabh.kumar');
 /*!40000 ALTER TABLE `shelfs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,7 +154,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('jaykay12','Jalaz Kumar','jalazkumar1208@gmail.com','995ac47c2ac42de7217d7586cdf433ed','9882552289','Saharanpur',134165,100,'default.png');
+INSERT INTO `users` VALUES ('akhilesh.kumar','Akhilesh Kumar','akhilesh.kumar@gmail.com','8ff16144547abc3939f0d11cce7dc887','9878767676','Banda',167416,100,'akhilesh.jpeg'),('anita.rani','Anita Rani','anita.rani@gmail.com','35063f67991237a06dcf7185f5587e1e','9887654321','Saharanpur',181283,100,'anita.jpg'),('atul.kumar','Atul Kumar','atul.kumar.prajapati@gmail.com','f4ab7eddbdd73c2cc291b330e9a69f11','9882238075','Kanpur',118522,100,'atulkumar.jpeg'),('bimal.lauhney','Bimalkant Lauhney','bimal.lauhney@gmail.com','aae73747721e64d4da79e177dcb38507','9878987894','Rudraprayag',149432,0,'bimal.jpeg'),('deep.shikha','Deepshikha','dkdeepshikhaa@gmail.com','db29735f9989709d33778dc58168ff0a','9876543210','Saharanpur',191211,100,'Deepu.jpg'),('deshpal.aec','Deshpal Singh','deshpal1962@gmail.com','a3043d6e0a3beb5bc0899ac0baf7a8bb','8755944473','Meerut',151232,100,'deshpal.jpg'),('govind.bisht','Govind Bisht','govind.bisht@gmail.com','f708f892d765e4adcaf2902f5eb066e6','8767876563','Almora',198330,100,'govind.jpeg'),('jalaz.kumar','Jalaz Kumar','jalazkumar1208@gmail.com','bfedb108f5ef51906c4b577bba590776','9882552289','Saharanpur',110157,30,'jalaz.jpg'),('mukesh.kharita','Mukesh Kharita','mukeshnithcse@gmail.com','d35f6c6a31fdf45e5ee4058b1adb534c','6787678789','Jaipur',151208,100,'mukesh.jpeg'),('narendra.dodwaria','Narendra Dodwaria','narendra.dodwaria@gmail.com','7bebef290f4b69b1b6595c98e84e98da','7898779898','Sikar',182628,100,'narendra.jpeg'),('pavan.bansal','Pavan Bansal','pavan.bansal@gmail.com','28bae51670dbd54d1a504de101708d4a','8787865543','Gwalior',131210,100,'pavan.jpeg'),('saurabh.kumar','Saurabh Kumar','saurabh0402@gmail.com','1160c2b751f657eb21965860f81b7fd9','9882552389','Patna',116437,0,'saurabh.jpeg'),('shubham.bhatt','Shubham Bhatt','shubham.bhatt@gmail.com','4cdd4687f830775cbab329e5e1289604','9759947092','Almora',144412,100,'shubham.jpeg'),('sukhbir.singh','Sukhbir Singh','sukhbir947@gmail.com','3773fd7f1041e30689b978b90ba6eb6c','9882546092','Jaipur',135030,0,'sukhbir.jpeg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -166,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-23 17:41:59
+-- Dump completed on 2018-09-30  3:04:50

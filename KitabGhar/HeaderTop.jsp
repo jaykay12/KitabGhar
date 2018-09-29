@@ -13,8 +13,12 @@
     </head>
     <body>
         <div style="height:83px; width:100%;">
-            <div style="margin-left: 10px; float:left;width:90px">   <img src="ProjectImages/projectlogo.jpg" height="75 px" width="75px"/>  </div>
-            <div style="float:left;width:150px"> <h1> KitabGhar </h1>  </div>
+            <div style="margin-left: 10px; float:left;width:90px">
+                <a href="/KitabGhar">   <img src="ProjectImages/projectlogo.jpg" height="75 px" width="75px"/>  </a>  
+            </div>
+            <div style="float:left;width:150px"> 
+                <a href="/KitabGhar"> <h1> KitabGhar </h1> </a>  
+            </div>
         </div>
     </body>
 </html>
