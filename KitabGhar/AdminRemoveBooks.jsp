@@ -8,13 +8,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-       <%@include file="connectionFile.jsp" %>
-        <%
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Remove Book</title>
+</head>
+
+<body>
+    <%@include file="connectionFile.jsp" %>
+    <%
         String SuccessMessage="",ErrorMessage="";
         try{
             String id;
@@ -37,26 +39,34 @@
         
         con.close();
            %>
-           
-           <%@include file="AdminHandle.jsp" %>
-        <h3><b>Delete Record Page</b></h3>
-        <br>
-        <form method="post">
-            <fieldset>
-                <table height="50px" border="1px">
-                    <tr>
-                        <td>Book Id:</td>
-                        <td><input type="digit" name="tbId"></td>
-                    </tr>
-                </table>
-                <br>
-                        <input type="submit" name="btnSubmit" value="Delete">
-            </fieldset>
-        </form>
-        <br>
-        <br>
-        <hr>
-        <b><h4 style="color:green"> <%= SuccessMessage %> </h4></b>
-                <b><h4 style="color:red"> <%= ErrorMessage %> </h4></b>
-    </body>
+
+    <%@include file="AdminHandle.jsp" %>
+    <h3><b>Delete Record Page</b></h3>
+    <br>
+    <form method="post" style="margin-left: 40%; margin-right: 40%; margin-top:2%">
+        <fieldset>
+            <div class="form-group">
+                <label class="label label-info" for="bookId">Book Id</label>
+                <input type="digit" name="tbId" class="form-control" id="boookId" placeholder="Enter book ID">
+            </div>
+            <button type="submit" name="btnSubmit" class="btn btn-danger">Delete</button>
+        </fieldset>
+    </form>
+    <br>
+    <br>
+    <hr>
+    <b>
+        <h4 style="color:green">
+            <%= SuccessMessage %>
+        </h4>
+    </b>
+    <b>
+        <h4 style="color:red">
+            <%= ErrorMessage %>
+        </h4>
+    </b>
+
+    
+</body>
+
 </html>
