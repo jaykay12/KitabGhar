@@ -117,9 +117,11 @@
                     <legend> Profile Picture </legend>
                     <img src="profilepics/<%= rs.getString(9)%>" height="300px" width="300px">
                         <br>
-                        <input type="file" name="dpUploader">
+                        <input type="file" name="uploadedFile">
                         <br>
-                        <center><input type="submit" value="Change Profile Picture" name="btnChangeDp"></center>
+                        <center>
+                            <input type="submit" value="Change Profile Picture" name="btnChangeDp">
+                        </center>
                 </fieldset>
             </div>
         </form>

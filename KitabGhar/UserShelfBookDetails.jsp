@@ -42,7 +42,7 @@
             <div style="height: 400px; width:50%; float: left">
                 <fieldset style="size: 350px; text-align: center">
                     <legend> Cover Page </legend>
-                        <img src="bookpics/<%= rs1.getString(5)%>/<%= rs1.getString(6)%>/<%= rs1.getString(9)%>" height="300px" width="300px">
+                        <img src="bookpics/<%= rs1.getString(9)%>" height="300px" width="300px">
                 </fieldset>
             </div>
             <div style="height: 400px; width:50%; float: left; text-align: left">

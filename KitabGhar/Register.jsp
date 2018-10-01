@@ -164,7 +164,7 @@
         { %>
              <a href="Login.jsp"><i>Click to continue : Login</i></a>
              <br>
-             <a href="UploadPic.jsp"><i> Click to Upload Display Picture </i></a>
+             <a href="UserUpdateProfile.jsp"><i> Click to Upload Display Picture </i></a>
          <% } %>
          </div>
          

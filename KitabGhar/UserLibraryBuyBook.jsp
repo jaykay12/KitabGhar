@@ -22,7 +22,6 @@
         <div style="height: 460px; width: 100%;" >
             
         <%
-            //String qry = "select * from users where userid='"+useridpassed+"'";
             String fid="";
             if(request.getParameter("id")!=null)
             {
@@ -38,11 +37,13 @@
             
             <fieldset style="size: 350px; text-align: center">
                     <legend> Cover Page </legend>
-                        <img src="bookpics/<%= rs.getString(5)%>/<%= rs.getString(6)%>/<%= rs.getString(9)%>" height="300px" width="300px">
+                        <img src="bookpics/<%= rs.getString(9)%>" height="300px" width="240px">
             </fieldset>
             
-            <center>    <a href="UserLibraryConfirmBuy.jsp?id= <%=rs.getString(7) %>"> <h3>BUY NOW : <%= rs.getString(8)%></h3></a>
-                <a href="UserLibraryBookDetails.jsp?id= <%= rs.getString(7) %>"><h3>CANCEL</h3></a>   </center>
+            <center>    
+                <a href="UserLibraryConfirmBuy.jsp?id= <%=rs.getString(7) %>"> <h3>BUY NOW : <%= rs.getString(8)%></h3></a>
+                <a href="UserLibraryBookDetails.jsp?id= <%= rs.getString(7) %>"><h3>CANCEL</h3></a>   
+            </center>
             
              <% } 
             } %>
