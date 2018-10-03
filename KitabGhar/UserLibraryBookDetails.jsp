@@ -115,7 +115,7 @@
                             </div>
                             <br>
                             <div class="review-box" style="width:90%; height:200px; margin-top:50px;">
-                                <textarea type="text" name="reviewBox" id="review" rows="5" cols="50">Your Review Here, </textarea>
+                                <textarea type="text" name="reviewBox" id="review" rows="5" cols="50"></textarea>
                             </div>
                             <div class="btnSubmitReview" style="width:100%;">
                                 <input type="submit" name="btnSubmit" id="btnSubmit"/>

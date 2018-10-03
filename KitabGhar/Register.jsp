@@ -36,7 +36,7 @@
                 Random r = new Random();
                 queryid = (100000+r.nextInt(99999));
                 
-                int tokens = 100;
+                int tokens = 500;
                 String profilepic="default.png";
                 
                 //-------------------------------------Encryption of Password------------------------------------------
