@@ -187,138 +187,108 @@
             {   ErrorMessage=ex2+"";    }
             con.close();
             %>
-        
-        
-            <%@include file="AdminHandle.jsp" %>
-            
-        <h2>Update Book Portal</h2>
-        <br>
+
+
+    <%@include file="AdminHandle.jsp" %>
+
+    <h2>Update Book Portal</h2>
+    <br>
+    <form method="post" style="margin-left: 40%; margin-right: 40%; margin-top:2%">
         <fieldset>
-            <form method="post">
-                <table border="0px" cell-padding="0px" cell-spacing="1px"align="center">
-                    <tr>
-                        <td>
-                            Book Id:
-                        </td>
-                        <td>
-                            <input type="text" name="tbBookId">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Name:
-                        </td>
-                        <td>
-                            <input type="text" name="tbName">
-                        </td>
-                        <td>
-                            <input type="submit" name="btnUpdateName" value="Change">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Author Name:
-                        </td>
-                        <td>
-                            <input type="text" name="tbAuthor">
-                        </td>
-                        <td>
-                            <input type="submit" name="btnUpdateAuthor" value="Change">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Name of Publication:
-                        </td>
-                        <td>
-                            <input type="text" name="tbPublication">
-                        </td>
-                        <td>
-                            <input type="submit" name="btnUpdatePub" value="Change">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Price(in terms of Tokens):
-                        </td>
-                        <td>
-                            <input type="text" name="tbPrice">
-                        </td>
-                        <td>
-                            <input type="submit" name="btnUpdatePrice" value="Change">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Category
-                        </td>
-                        <td>
-                            <input type="text" name="tbCategory">
-                        </td>
-                        <td>
-                            <input type="submit" name="btnUpdateCat" value="Change">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Sub Category:
-                        </td>
-                        <td>
-                            <input type="text" name="tbSubCategory">
-                        </td>
-                        <td>
-                            <input type="submit" name="btnUpdateSubCat" value="Change">
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>---------------------------------</td>
-                        <td>---------------------------------</td>
-                        <td>---------------------------------</td>
-                    </tr>
-                    <tr>
-                        <td>---------------------------------</td>
-                        <td>---------------------------------</td>
-                        <td>---------------------------------</td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <td>
-                            Cover Photo link:
-                        </td>
-                        <td>
-                            <input type="text" name="tbCoverPic">
-                        </td>
-                        <td>
-                            <input type="submit" name="btnUpdateCoverPic" value="Change">
-                        </td>
-                    </tr>
-                        
-                    <tr>
-                        <td>
-                            Download Link:
-                        </td>
-                        <td>
-                            <input type="text" name="tbDownloadLink">
-                        </td>
-                        <td>
-                            <input type="submit" name="btnUpdateDownloadLink" value="Change">
-                        </td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <td></td>
-                        <td>
-                        <input type="submit" name="btnSubmit" value="Update">
-                        </td></tr>
-                </table>    
-            </form>
+            <div class="form-group">
+                <label class="label label-info" for="bookId">Book Id</label>
+                <input type="digit" name="tbBookId" class="form-control" id="bookId">
+            </div>
+            <div class="form-group">
+                <label class="label label-info" for="name">Name</label>
+                <div class="input-group">
+                    <input type="digit" name="tbName" class="form-control" id="name">
+                    <span class="input-group-btn">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary">Change</button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="label label-info" for="author">Author Name</label>
+                <div class="input-group">
+                    <input type="digit" name="tbAuthor" class="form-control" id="author">
+                    <span class="input-group-btn">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary">Change</button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="label label-info" for="publication">Name of Publication</label>
+                <div class="input-group">
+                    <input type="digit" name="tbPublication" class="form-control" id="publication">
+                    <span class="input-group-btn">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary">Change</button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="label label-info" for="price">Price (in terms of tokens)</label>
+                <div class="input-group">
+                    <input type="digit" name="tbPrice" class="form-control" id="price">
+                    <span class="input-group-btn">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary">Change</button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="label label-info" for="cat">Category</label>
+                <div class="input-group">
+                    <input type="digit" name="tbCategory" class="form-control" id="cat">
+                    <span class="input-group-btn">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary">Change</button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="label label-info" for="subcat">Sub-Category</label>
+                <div class="input-group">
+                    <input type="digit" name="tbSubCategory" class="form-control" id="subcat">
+                    <span class="input-group-btn">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary">Change</button>
+                    </span>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="form-group">
+                <label class="label label-info" for="photo">Cover Photo Link</label>
+                <div class="input-group">
+                    <input type="digit" name="tbCoverPic" class="form-control" id="photo">
+                    <span class="input-group-btn">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary">Change</button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="label label-info" for="download">Download Link</label>
+                <div class="input-group">
+                    <input type="digit" name="tbDownloadLink" class="form-control" id="download">
+                    <span class="input-group-btn">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary">Change</button>
+                    </span>
+                </div>
+            </div>
+            <button type="submit" name="btnSubmit" class="btn btn-warning">Update</button>
         </fieldset>
-        <br>
-        <hr>
-        <b><h4 style="color:green"><%= SuccessMessage %></h4></b>
-        <b><h4 style="color:red"><%= ErrorMessage %></h4></b>
-    </body>
+    </form>
+    <br>
+    <hr>
+    <b>
+        <h4 style="color:green">
+            <%= SuccessMessage %>
+        </h4>
+    </b>
+    <b>
+        <h4 style="color:red">
+            <%= ErrorMessage %>
+        </h4>
+    </b>
+</body>
+
 </html>

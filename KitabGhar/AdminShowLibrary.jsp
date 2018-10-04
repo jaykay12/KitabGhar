@@ -27,7 +27,7 @@
         
         <h3><b>Displaying all Records</b></h3>
         <br>
-        <table border="0px" cell-padding="0px" cellspacing="20px">
+        <table class="table table-striped">
             <tr>
                 <th>Book Id</th>
                 <th>Cover Pic</th>
