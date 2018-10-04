@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Reviews</title>
     </head>
     <body>
         <h1> Reading Reviews and comments about the book, done by active subscribers, ONLY READABLE  <br> <br> <br> <br> <hr> <center> <b> Currently PUT ON HOLD  </b> </center> <hr> </h1>

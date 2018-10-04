@@ -34,10 +34,10 @@
             });
         </script>
 
-        <title>JSP Page</title>
+        <title>KitabGhar | Library</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
-        <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidProfile.jsp" %>
         <%@include file="connectionFile.jsp" %>
         <fieldset style="width: 100%; text-align: center">
@@ -115,7 +115,7 @@
                             </div>
                             <br>
                             <div class="review-box" style="width:90%; height:200px; margin-top:50px;">
-                                <textarea type="text" name="reviewBox" id="review" rows="5" cols="50">Your Review Here, </textarea>
+                                <textarea type="text" name="reviewBox" id="review" rows="5" cols="50"></textarea>
                             </div>
                             <div class="btnSubmitReview" style="width:100%;">
                                 <input type="submit" name="btnSubmit" id="btnSubmit"/>

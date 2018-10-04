@@ -13,10 +13,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Shelf</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
-        <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidProfile.jsp" %>
         <%@include file="connectionFile.jsp" %>
         
@@ -168,7 +168,7 @@
                                                 %>
                     <td>
                         <table border="0px">
-                            <tr><td><img src="bookpics/<%= category%>/<%= subcategory%>/<%=coverpic%>" height="150px" width="150px"></td></tr>
+                            <tr><td><img src="bookpics/<%=coverpic%>" height="150px" width="150px"></td></tr>
                             <tr><td><%= name %></td></tr>
                             <tr><td><%= author %></td></tr>
                             <tr><td><a href="UserShelfBookDetails.jsp?id=<%=rs1.getString(7) %>"> Click to get details </a></td></tr>

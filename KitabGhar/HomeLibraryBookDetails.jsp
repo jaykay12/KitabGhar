@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Library</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
-        <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidSite.jsp" %>
         <%@include file="connectionFile.jsp" %>
         <div style="height: 400px; width: 100%;" >
@@ -35,7 +35,7 @@
             <div style="height: 400px; width:50%; float: left">
                 <fieldset style="size: 350px; text-align: center">
                     <legend> Cover Page </legend>
-                        <img src="bookpics/<%= rs.getString(5)%>/<%= rs.getString(6)%>/<%= rs.getString(9)%>" height="300px" width="300px">
+                        <img src="bookpics/<%= rs.getString(9)%>" height="300px" width="300px">
                 </fieldset>
             </div>
             <div style="height: 400px; width:50%; float: left; text-align: left">

@@ -7,18 +7,18 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>User Details</title>
-</head>
-
-<body style="margin-top:3%;margin-left: 2%;margin-right: 3%">
-    <%@include file="GetSession.jsp" %>
-    <%@include file="connectionFile.jsp" %>
-
-    <%
-        String fid=request.getParameter("id");
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>KitabGhar | Admin</title>
+        <link rel="shortcut icon" type="image/x-icon" href="ProjectImages/favicon.ico" />
+    </head>
+    <body>
+        <h1>Details: </h1>
+        <%@include file="GetSession.jsp" %>
+        <%@include file="connectionFile.jsp" %>
+        
+        <%
+        String fid="";
         
         if(fid!=null)
         {

@@ -10,10 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Sales</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
-      <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidProfile.jsp" %>
         <%@include file="connectionFile.jsp" %>
 
@@ -33,22 +33,27 @@
             if(request.getParameter("id")!=null)
             {
                 fid = request.getParameter("id");
-                //out.println(fid);
+                System.out.println(fid);
+                System.out.println(useridpassed);
+                
                 String qry1 = "select * from books where queryid='"+fid+"'";
                 ResultSet rs1 = smt.executeQuery(qry1);
                 Boolean b1 = rs1.next();
                 bookid = rs1.getString(1);
                 price = rs1.getInt(8);
-                //out.println(bookid);
+
+                System.out.println(bookid);
+                System.out.println(price);
 
                 String qry2 = "select * from users where userid='"+useridpassed+"'";
                 ResultSet rs2 = smt.executeQuery(qry2);
                 Boolean b2 = rs2.next();
-                //out.println(b2);
+                
 
                 currentBalance = rs2.getInt(8);
                 newBalance = currentBalance - price ;
-                out.println(newBalance);
+                
+                System.out.println(newBalance);
 
                 String qry5 = "select bookid from shelfs where userid='"+useridpassed+"'";
                 ResultSet rs5 = smt.executeQuery(qry5);
@@ -66,6 +71,7 @@
                 {
                   WarningMessage = "Beware...!!! You already have the selected book in your shelf";
                   Source = "Thinking.png";
+                  System.out.println("Book Already Bought!");
                 }
                 else if(newBalance >= 0)
                 {
@@ -75,18 +81,20 @@
                         {
                         Random r = new Random();
                         tid = (100000+r.nextInt(99999));
-                        String qry4 = "insert into shelfs values("+tid+",'"+bookid+"','"+useridpassed+"',0)";
+                        String qry4 = "insert into shelfs values("+tid+",'"+bookid+"','"+useridpassed+"')";
                         int result =  smt.executeUpdate(qry4);
 
                             if(result>0)
                             {
                                 SuccessMessage = "Congratulations...!!! Book Successfully Purchased, Added to your personal shelf";
                                 Source = "Done.jpg";
+                                System.out.println(SuccessMessage);
                             }
                             else
                             {
                                 ErrorMessage = "Sorry, for the inconvenience...!! Money Debited, Error in Transaction. Money will be refundede Soon..";
                                 Source = "Sorry.png";
+                                System.out.println(ErrorMessage);
                             }
                         }
                 }
@@ -94,6 +102,7 @@
                 {
                     ErrorMessage = "Sorry Subscriber...!! Insufficient Balance to make this purchase";
                     Source = "NeedCash.png";
+                    System.out.println(ErrorMessage);
                 }
 
             }

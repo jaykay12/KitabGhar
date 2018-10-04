@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Profile</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
-        <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidProfile.jsp" %>
         <%@include file="connectionFile.jsp" %>
         <div style="height: 400px; width: 100%;" >
@@ -117,9 +117,11 @@
                     <legend> Profile Picture </legend>
                     <img src="profilepics/<%= rs.getString(9)%>" height="300px" width="300px">
                         <br>
-                        <input type="file" name="dpUploader">
+                        <input type="file" name="uploadedFile">
                         <br>
-                        <center><input type="submit" value="Change Profile Picture" name="btnChangeDp"></center>
+                        <center>
+                            <input type="submit" value="Change Profile Picture" name="btnChangeDp">
+                        </center>
                 </fieldset>
             </div>
         </form>

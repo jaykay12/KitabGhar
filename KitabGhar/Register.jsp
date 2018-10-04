@@ -1,8 +1,7 @@
 <%-- 
     Document   : Register
-    Created on : 24 Jun, 2016, 7:42:13 PM
+    Created on : 24 Jun, 2016, 7:42:26 PM
     Author     : Jalaz
-    Description: Sign Up page for Registering new users
 --%>
 
 <%@page import="java.math.BigInteger"%>
@@ -13,7 +12,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Register</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
         
@@ -36,7 +36,7 @@
                 Random r = new Random();
                 queryid = (100000+r.nextInt(99999));
                 
-                int tokens = 100;
+                int tokens = 500;
                 String profilepic="default.png";
                 
                 //-------------------------------------Encryption of Password------------------------------------------
@@ -84,7 +84,6 @@
             con.close();
             %>
         
-        <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidSite.jsp" %>
         <div style="height: 440px; width: 100%">
             
@@ -164,7 +163,7 @@
         { %>
              <a href="Login.jsp"><i>Click to continue : Login</i></a>
              <br>
-             <a href="UploadPic.jsp"><i> Click to Upload Display Picture </i></a>
+             <a href="UserUpdateProfile.jsp"><i> Click to Upload Display Picture </i></a>
          <% } %>
          </div>
          

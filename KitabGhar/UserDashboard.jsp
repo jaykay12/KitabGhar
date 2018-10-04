@@ -12,10 +12,10 @@
         <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
         <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="styles/styles.css">
-        <title>JSP Page</title>
+        <title>KitabGhar | Dashboard</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
-        <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidProfile.jsp" %>
         <%@include file="connectionFile.jsp" %>
 

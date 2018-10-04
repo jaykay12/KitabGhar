@@ -2,23 +2,21 @@
     Document   : AdminAddBooks
     Created on : 5 Jul, 2016, 9:17:17 AM
     Author     : Jalaz
-    Description: Let the Admin add new books to the bookstore
 --%>
 
 <%@page import="java.util.Random"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
-</head>
-
-<body>
-    <%@include file="connectionFile.jsp" %>
-
-    <%
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>KitabGhar | Admin</title>
+        <link rel="shortcut icon" type="image/x-icon" href="ProjectImages/favicon.ico" />
+    </head>
+    <body>
+        <%@include file="connectionFile.jsp" %>
+        
+        <%
             String bookid="", name="", author="", publication="", category="", subcategory="";
             int queryid,price;
             String SuccessMessage="", ErrorMessage="";

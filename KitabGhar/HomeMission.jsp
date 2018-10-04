@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Mission</title>
     </head>
     <body>
         <h1> In search of a good article writer <br> <br> <br> <br> <hr> <center> <b> UNDER CONSTRUCTION </b> </center> <hr> </h1>

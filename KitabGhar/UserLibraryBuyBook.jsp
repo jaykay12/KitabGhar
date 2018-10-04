@@ -12,17 +12,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Sales</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
-        <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidProfile.jsp" %>
         <%@include file="connectionFile.jsp" %>
         
         <div style="height: 460px; width: 100%;" >
             
         <%
-            //String qry = "select * from users where userid='"+useridpassed+"'";
             String fid="";
             if(request.getParameter("id")!=null)
             {
@@ -38,11 +37,13 @@
             
             <fieldset style="size: 350px; text-align: center">
                     <legend> Cover Page </legend>
-                        <img src="bookpics/<%= rs.getString(5)%>/<%= rs.getString(6)%>/<%= rs.getString(9)%>" height="300px" width="300px">
+                        <img src="bookpics/<%= rs.getString(9)%>" height="300px" width="240px">
             </fieldset>
             
-            <center>    <a href="UserLibraryConfirmBuy.jsp?id= <%=rs.getString(7) %>"> <h3>BUY NOW : <%= rs.getString(8)%></h3></a>
-                <a href="UserLibraryBookDetails.jsp?id= <%= rs.getString(7) %>"><h3>CANCEL</h3></a>   </center>
+            <center>    
+                <a href="UserLibraryConfirmBuy.jsp?id= <%=rs.getString(7) %>"> <h3>BUY NOW : <%= rs.getString(8)%></h3></a>
+                <a href="UserLibraryBookDetails.jsp?id= <%= rs.getString(7) %>"><h3>CANCEL</h3></a>   
+            </center>
             
              <% } 
             } %>
