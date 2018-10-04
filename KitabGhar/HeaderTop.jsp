@@ -9,8 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-        <title>JSP Page</title>
+        <link rel="shortcut icon" type="image/x-icon" href="ProjectImages/favicon.ico" />
+        <title>KitabGhar</title>
     </head>
     <body>
         <div style="height:83px; width:100%;">

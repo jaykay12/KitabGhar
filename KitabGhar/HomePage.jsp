@@ -10,10 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Home</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
-        <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidSite.jsp" %>
         <div style="height: 460px; width: 100%">
             <div style="height: 460px; width:50%; float: left">

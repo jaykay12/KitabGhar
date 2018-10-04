@@ -1,8 +1,7 @@
 <%-- 
     Document   : Register
-    Created on : 24 Jun, 2016, 7:42:13 PM
+    Created on : 24 Jun, 2016, 7:42:26 PM
     Author     : Jalaz
-    Description: Sign Up page for Registering new users
 --%>
 
 <%@page import="java.math.BigInteger"%>
@@ -13,7 +12,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Register</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
         
@@ -84,7 +84,6 @@
             con.close();
             %>
         
-        <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidSite.jsp" %>
         <div style="height: 440px; width: 100%">
             

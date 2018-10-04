@@ -34,10 +34,10 @@
             });
         </script>
 
-        <title>JSP Page</title>
+        <title>KitabGhar | Library</title>
+        <%@include file="HeaderTop.jsp" %>
     </head>
     <body>
-        <%@include file="HeaderTop.jsp" %>
         <%@include file="HeaderMidProfile.jsp" %>
         <%@include file="connectionFile.jsp" %>
         <fieldset style="width: 100%; text-align: center">

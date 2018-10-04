@@ -10,7 +10,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Reviews</title>
+        <link rel="shortcut icon" type="image/x-icon" href="ProjectImages/favicon.ico" />
     </head>
     <body>
         <h1> Writing your own Reviews about the book and commenting on reviews by other subscribers,  <br> <br> <br> <br> <hr> <center> <b> Currently PUT ON HOLD  </b> </center> <hr> </h1>

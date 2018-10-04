@@ -9,7 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>KitabGhar | Admin</title>
+        <link rel="shortcut icon" type="image/x-icon" href="ProjectImages/favicon.ico" />
     </head>
     <body>
         <%@include file="GetSession.jsp" %>
