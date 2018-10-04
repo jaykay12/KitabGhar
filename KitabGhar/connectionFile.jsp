@@ -14,8 +14,9 @@
     <body>
         <%
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kitabghar", "root", "jalaz");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kitabghar", "root", "root");
         Statement smt = con.createStatement();
+        PreparedStatement stm;
                 %>
 
     </body>

@@ -17,15 +17,17 @@
 <body>
     <%@include file="connectionFile.jsp" %>
     <%
+        String qry="delete from books where bookid=?";
+        stm = con.prepareStatement(qry);
         String SuccessMessage="",ErrorMessage="";
         try{
             String id;
             if(request.getParameter("btnSubmit")!=null)
             {
-                id=request.getParameter("tbId");
+                stm.setString(1,request.getParameter("tbId"));
                 
-                String qry="delete from books where bookid='"+id+"'";
-                int r = smt.executeUpdate(qry);
+                
+                int r = stm.executeUpdate();
                 
                 if(r>0)
                 {   SuccessMessage="Book Record Deleted";    }
@@ -66,7 +68,7 @@
         </h4>
     </b>
 
-    
+
 </body>
 
 </html>

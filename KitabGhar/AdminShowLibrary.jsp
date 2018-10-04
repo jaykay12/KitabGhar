@@ -19,8 +19,9 @@
         String bookid,name,author,publication,category,subcategory,coverpic;
         int price;
         String qry = "select * from books";
+        stm = con.prepareStatement(qry);
         
-        ResultSet rs = smt.executeQuery(qry);
+        ResultSet rs = stm.executeQuery();
         %>
         
         

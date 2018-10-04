@@ -18,8 +18,9 @@
         <%
         String id,name,email,coverpic;
         String qry = "select * from users";
+        stm = con.prepareStatement(qry);
         
-        ResultSet rs = smt.executeQuery(qry);
+        ResultSet rs = stm.executeQuery();
         %>
         
         

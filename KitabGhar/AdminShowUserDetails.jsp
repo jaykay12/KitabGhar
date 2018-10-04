@@ -18,13 +18,14 @@
     <%@include file="connectionFile.jsp" %>
 
     <%
-        String fid="";
+        String fid=request.getParameter("id");
         
-        if(request.getParameter("id")!=null)
+        if(fid!=null)
         {
-            fid = request.getParameter("id");
-            String qry = "select * from users where queryid="+fid+"";
-            ResultSet rs = smt.executeQuery(qry);
+            String qry = "select * from users where queryid=?";
+            stm = con.prepareStatement(qry);
+            stm.setString(1, fid);
+            ResultSet rs = stm.executeQuery();
             
                 
             if(rs.next())

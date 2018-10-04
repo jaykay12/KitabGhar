@@ -48,10 +48,22 @@
                     downloadlink="Sorry.jsp";
                 }
                 
-                String qry = "insert into books values('"+bookid+"','"+name+"','"+author+"','"+publication+"','"+category+"','"+subcategory+"',"+queryid+","+price+",'"+coverpic+"','"+downloadlink+"')";               
+                //String qry = "insert into books values('"+bookid+"','"+name+"','"+author+"','"+publication+"','"+category+"','"+subcategory+"',"+queryid+","+price+",'"+coverpic+"','"+downloadlink+"')";
+                String qry = "insert into books values(?,?,?,?,?,?,?,?,?,?)";
+                stm = con.prepareStatement(qry);
+                stm.setString(1, bookid);
+                stm.setString(2, name);
+                stm.setString(3, author);
+                stm.setString(4, publication);
+                stm.setString(5, category);
+                stm.setString(6, subcategory);
+                stm.setInt(7, queryid);
+                stm.setInt(8, price);
+                stm.setString(9, coverpic);
+                stm.setString(10, downloadlink);
                 
                 
-                int result = smt.executeUpdate(qry);
+                int result = stm.executeUpdate();
                 
                 if(result>0)
                 {
