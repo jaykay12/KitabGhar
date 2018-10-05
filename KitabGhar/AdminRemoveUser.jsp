@@ -16,15 +16,15 @@
                
         <%@include file="connectionFile.jsp" %>
         <%
+        String qry="delete from users where userid=?";
+        stm = con.prepareStatement(qry);
         String SuccessMessage="",ErrorMessage="";
         try{
-            String id;
             if(request.getParameter("btnSubmit")!=null)
             {
-                id=request.getParameter("tbId");
+                stm.setString(1, request.getParameter("tbId"));
                 
-                String qry="delete from users where userid='"+id+"'";
-                int r = smt.executeUpdate(qry);
+                int r = stm.executeUpdate();
                 
                 if(r>0)
                 {   SuccessMessage="Record Deleted";    }
@@ -42,18 +42,15 @@
            <%@include file="AdminHandle.jsp" %>
         <h3><b>Delete Record Page</b></h3>
         <br>
-        <form method="post">
-            <fieldset>
-                <table height="50px" border="1px">
-                    <tr>
-                        <td>User Id:</td>
-                        <td><input type="digit" name="tbId"></td>
-                    </tr>
-                </table>
-                <br>
-                        <input type="submit" name="btnSubmit" value="Delete">
-            </fieldset>
-        </form>
+        <form method="post" style="margin-left: 40%; margin-right: 40%; margin-top:2%">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="label label-info" for="bookId">User Id</label>
+                        <input type="digit" name="tbId" class="form-control" id="boookId" placeholder="Enter user ID">
+                    </div>
+                    <button type="submit" name="btnSubmit" class="btn btn-danger">Delete</button>
+                </fieldset>
+            </form>
         <br>
         <br>
         <hr>

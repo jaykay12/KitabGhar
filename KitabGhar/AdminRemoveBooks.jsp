@@ -15,16 +15,19 @@
     </head>
     <body>
        <%@include file="connectionFile.jsp" %>
+
         <%
+        String qry="delete from books where bookid=?";
+        stm = con.prepareStatement(qry);
+        
         String SuccessMessage="",ErrorMessage="";
         try{
             String id;
             if(request.getParameter("btnSubmit")!=null)
             {
-                id=request.getParameter("tbId");
+                stm.setString(1,request.getParameter("tbId"));
                 
-                String qry="delete from books where bookid='"+id+"'";
-                int r = smt.executeUpdate(qry);
+                int r = stm.executeUpdate();
                 
                 if(r>0)
                 {   SuccessMessage="Book Record Deleted";    }
@@ -38,26 +41,38 @@
         
         con.close();
            %>
-           
-           <%@include file="AdminHandle.jsp" %>
-        <h3><b>Delete Record Page</b></h3>
-        <br>
-        <form method="post">
-            <fieldset>
-                <table height="50px" border="1px">
-                    <tr>
-                        <td>Book Id:</td>
-                        <td><input type="digit" name="tbId"></td>
-                    </tr>
-                </table>
-                <br>
-                        <input type="submit" name="btnSubmit" value="Delete">
-            </fieldset>
-        </form>
-        <br>
-        <br>
-        <hr>
-        <b><h4 style="color:green"> <%= SuccessMessage %> </h4></b>
-                <b><h4 style="color:red"> <%= ErrorMessage %> </h4></b>
-    </body>
+
+    <%@include file="AdminHandle.jsp" %>
+    <h3><b>Delete Record Page</b></h3>
+    <br>
+    <form method="post" style="margin-left: 40%; margin-right: 40%; margin-top:2%">
+        <fieldset>
+            <div>
+                <div class="form-group">
+                    <label class="label label-info" for="bookId">Book Id</label>
+                    <input type="digit" name="tbId" class="form-control" id="boookId" placeholder="Enter book ID">
+                </div>
+                <div style="text-align:center;">
+                    <button  style="display: inline-block;" type="submit" name="btnSubmit" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <br>
+    <br>
+    <hr>
+    <b>
+        <h4 style="color:green">
+            <%= SuccessMessage %>
+        </h4>
+    </b>
+    <b>
+        <h4 style="color:red">
+            <%= ErrorMessage %>
+        </h4>
+    </b>
+
+
+</body>
+
 </html>

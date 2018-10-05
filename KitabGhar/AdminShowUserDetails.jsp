@@ -7,75 +7,97 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>KitabGhar | Admin</title>
         <link rel="shortcut icon" type="image/x-icon" href="ProjectImages/favicon.ico" />
     </head>
-    <body>
-        <h1>Details: </h1>
-        <%@include file="GetSession.jsp" %>
-        <%@include file="connectionFile.jsp" %>
+
+
+<body style="margin-top:3%;margin-left: 2%;margin-right: 3%">
+    <%@include file="connectionFile.jsp" %>
+    <%@include file="AdminHandle.jsp" %>
+
         
         <%
-        String fid="";
+        String fid=request.getParameter("id");
         
-        if(request.getParameter("id")!=null)
+        if(fid!=null)
         {
-            fid = request.getParameter("id");
-            String qry = "select * from users where queryid="+fid+"";
-            ResultSet rs = smt.executeQuery(qry);
+            String qry = "select * from users where queryid=?";
+            stm = con.prepareStatement(qry);
+            stm.setString(1, fid);
+            ResultSet rs = stm.executeQuery();
             
                 
             if(rs.next())
             {
              
         %>
-        
-            <div style="height: 400px; width:50%; float: left">
-                <fieldset style="size: 350px; text-align: center">
-                    <legend> Profile Picture </legend>
-                        <img src="profilepics/<%= rs.getString(9)%>" height="300px" width="300px">
-                </fieldset>
-                        <center>Source: profilepics/<%= rs.getString(9)%> </center>
-            </div>
-            <div style="height: 400px; width:50%; float: left; text-align: left">
-                <hr>
-                <h2><center>Complete Records</center></h2>
-                <table width="40%" height="250px" border="0px" style="margin-left: 20px" >                  
+
+    <div class="container">
+        <div style="margin-top:80px;">
+            <fieldset style="text-align:center">
+                <img class="img-thumbnail" src="profilepics/<%= rs.getString(9)%>" height="300px" width="250px">
+            </fieldset>
+            <center>Source: profilepics/
+                <%= rs.getString(9)%>
+            </center>
+        </div>
+        <div>
+            <hr>
+            <center>
+                <table class="table" style="text-align: center; width: 50%">
                     <tr>
-                        <td>Name: </td>
-                        <td> <%= rs.getString(1) %></td>
+                        <td><b>Name: </b></td>
+                        <td>
+                            <%= rs.getString(1) %>
+                        </td>
                     </tr>
                     <tr>
-                        <td>User Id: </td>
-                        <td> <%= rs.getString(2) %></td>
+                        <td><b>User Id: </b></td>
+                        <td>
+                            <%= rs.getString(2) %>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Email: </td>
-                        <td> <%= rs.getString(3) %></td>
+                        <td><b>Email: </b></td>
+                        <td>
+                            <%= rs.getString(3) %>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Contact: </td>
-                        <td> <%= rs.getString(5) %></td>
+                        <td><b>Contact: </b></td>
+                        <td>
+                            <%= rs.getString(5) %>
+                        </td>
                     </tr>
                     <tr>
-                        <td>City: </td>
-                        <td> <%= rs.getString(6) %></td>
+                        <td><b>City: </b></td>
+                        <td>
+                            <%= rs.getString(6) %>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Tokens: </td>
-                        <td> <%= rs.getString(8) %></td>
+                        <td><b>Tokens: </b></td>
+                        <td>
+                            <%= rs.getString(8) %>
+                        </td>
                     </tr>
                 </table>
-                <hr>
-                <br>
-                <br>
-            </div>
-            
-            <% }
+            </center>
+            <hr>
+            <br>
+            <br>
+        </div>
+
+        <% }
         }
              %>
-      </table>
-    </body>
+        </table>
+    </div>
+
+</body>
+
 </html>

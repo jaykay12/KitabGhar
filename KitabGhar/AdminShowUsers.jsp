@@ -19,20 +19,21 @@
         <%
         String id,name,email,coverpic;
         String qry = "select * from users";
+        stm = con.prepareStatement(qry);
         
-        ResultSet rs = smt.executeQuery(qry);
+        ResultSet rs = stm.executeQuery();
         %>
         
         
         <h3><b>Displaying All Current Subscribers</b></h3>
         <br>
-        <table border="1px" cellpadding="5px" cellspacing="10px">
+        <table class="table table-striped">
             <tr>
                 <th>User Id</th>
                 <th>Profile</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th> </th>
+                <th>User Details</th>
             </tr>
             
             <%
@@ -45,7 +46,7 @@
         %>
             <tr>
                 <td><%= id %></td>
-                <td><img src="profilepics/<%= rs.getString(9)%>" height="150px" width="150px"></td>
+                <td><img class="img-thumbnail" src="profilepics/<%= rs.getString(9)%>" height="120px" width="100px"></td>
                 <td><%= name %></td>
                 <td><%= email %></td>
                 <td><a href="AdminShowUserDetails.jsp?id= <%=rs.getString(7)%>"> View More </a> </td>
