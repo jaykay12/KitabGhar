@@ -20,8 +20,9 @@
         String bookid,name,author,publication,category,subcategory,coverpic;
         int price;
         String qry = "select * from books";
+        stm = con.prepareStatement(qry);
         
-        ResultSet rs = smt.executeQuery(qry);
+        ResultSet rs = stm.executeQuery();
         %>
         
         
@@ -54,7 +55,7 @@
         %>
             <tr>
                 <td><%= bookid %></td>
-                <td><img src="bookpics/<%=coverpic%>" height="100px" width="100px">
+                <td><img class="img-thumbnail" src="bookpics/<%=coverpic%>" height="100px" width="80px">
                 <td><%= name %></td>
                 <td><%= author %></td>
                 <td><%= publication %></td>

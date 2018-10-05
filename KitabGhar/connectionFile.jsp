@@ -16,6 +16,7 @@
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kitabghar", "root", "jalaz");
         Statement smt = con.createStatement();
+        PreparedStatement stm;
                 %>
 
     </body>

@@ -16,15 +16,15 @@
                
         <%@include file="connectionFile.jsp" %>
         <%
+        String qry="delete from users where userid=?";
+        stm = con.prepareStatement(qry);
         String SuccessMessage="",ErrorMessage="";
         try{
-            String id;
             if(request.getParameter("btnSubmit")!=null)
             {
-                id=request.getParameter("tbId");
+                stm.setString(1, request.getParameter("tbId"));
                 
-                String qry="delete from users where userid='"+id+"'";
-                int r = smt.executeUpdate(qry);
+                int r = stm.executeUpdate();
                 
                 if(r>0)
                 {   SuccessMessage="Record Deleted";    }

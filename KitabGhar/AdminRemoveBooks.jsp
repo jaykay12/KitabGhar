@@ -15,17 +15,19 @@
     </head>
     <body>
        <%@include file="connectionFile.jsp" %>
-        <%
 
+        <%
+        String qry="delete from books where bookid=?";
+        stm = con.prepareStatement(qry);
+        
         String SuccessMessage="",ErrorMessage="";
         try{
             String id;
             if(request.getParameter("btnSubmit")!=null)
             {
-                id=request.getParameter("tbId");
+                stm.setString(1,request.getParameter("tbId"));
                 
-                String qry="delete from books where bookid='"+id+"'";
-                int r = smt.executeUpdate(qry);
+                int r = stm.executeUpdate();
                 
                 if(r>0)
                 {   SuccessMessage="Book Record Deleted";    }
@@ -45,11 +47,15 @@
     <br>
     <form method="post" style="margin-left: 40%; margin-right: 40%; margin-top:2%">
         <fieldset>
-            <div class="form-group">
-                <label class="label label-info" for="bookId">Book Id</label>
-                <input type="digit" name="tbId" class="form-control" id="boookId" placeholder="Enter book ID">
+            <div>
+                <div class="form-group">
+                    <label class="label label-info" for="bookId">Book Id</label>
+                    <input type="digit" name="tbId" class="form-control" id="boookId" placeholder="Enter book ID">
+                </div>
+                <div style="text-align:center;">
+                    <button  style="display: inline-block;" type="submit" name="btnSubmit" class="btn btn-danger">Delete</button>
+                </div>
             </div>
-            <button type="submit" name="btnSubmit" class="btn btn-danger">Delete</button>
         </fieldset>
     </form>
     <br>
@@ -66,7 +72,7 @@
         </h4>
     </b>
 
-    
+
 </body>
 
 </html>
