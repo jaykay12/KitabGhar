@@ -37,6 +37,6 @@
             </div>
         </div>
         <%@include file="Footer.jsp" %>
-        <% System.out.println("Hello"); %>
+        <% System.out.println("Welcome to System"); %>
     </body>
 </html>
