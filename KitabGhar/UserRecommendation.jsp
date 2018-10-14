@@ -23,81 +23,84 @@
         <br>
         
 
-<%-- ---------------------------------------------------------------------------------------------------- --%>
-<%! int selection = 0;
-    int size, subsize, looplimiter, j;  %>        
+<%-- -------------------------------------------------------------------------------------------- --%>
+<%@page import="java.io.*" %>
+<%@page import="java.net.*" %>
+<%@page import="java.util.*" %>
+<%! URL url;
+    HttpURLConnection conn;
+    int responsecode;
+    String inline = "";
+    Scanner sc;
+      %>   
         
-<%-- ------------------------------ Working with all Filters and Searches in the display section ------------------------- --%>
-        <%
-        String bookid,name,author,publication,category,subcategory,coverpic;
-        int price;
-        
-        if(selection == 0) 
-        {
-            String filter="";
-            String qry1="";
-            String search="";
+<%-- ------------------------------ Popularity Recommendations On Sales ------------------------- --%>
+<%    
+    url = new URL("http://127.0.0.1:5000/recommendations/sales");
+    conn = (HttpURLConnection)url.openConnection();
+    conn.setRequestMethod("GET");
+    conn.connect();
+    responsecode = conn.getResponseCode();
 
-            
-            qry1 = "select * from books";
-            
+    inline="";
+    sc = new Scanner(url.openStream());
+    while(sc.hasNext())
+    {
+        inline += sc.nextLine();
+    }
+    System.out.println(inline);
 
-            ResultSet rs1 = smt.executeQuery(qry1);
+    sc.close();   
+%>
+<%= inline %>
 
-            size=0;
-            subsize=0;
-            if(rs1 != null)
-            {
-                rs1.beforeFirst();
-                rs1.last();
-                size=rs1.getRow();
-            }
-            subsize = size % 6;
-            size = size/6;
+<%-- -------------------------------------------------------------------------------------------- --%>
 
-            looplimiter = 6;
+<%-- ------------------------------ Popularity Recommendations On Ratings ----------------------- --%>
 
-            rs1.beforeFirst();
-            %>
+<%
+    url = new URL("http://127.0.0.1:5000/recommendations/ratings");
+    conn = (HttpURLConnection)url.openConnection();
+    conn.setRequestMethod("GET");
+    conn.connect();
+    responsecode = conn.getResponseCode();
 
-            <table border="1 px" cellspacing="50px">
-                <%  j=0; 
-            for(int i=0;i<=size;i++) { 
-                    if(j==5)
-                        rs1.previous();
-                    j=0; %>
-                <tr>
-                    <%
-                if(i==size)
-                    looplimiter = subsize;
+    inline = "";
+    sc = new Scanner(url.openStream());
+    while(sc.hasNext())
+    {
+        inline += sc.nextLine();
+    }
+    System.out.println(inline);
 
-                  while(j < looplimiter)  
-                    { 
-                        boolean b1=rs1.next();
-                        bookid = rs1.getString(1);
-                        name = rs1.getString(2);
-                        author = rs1.getString(3);
-                        publication = rs1.getString(4);
-                        category = rs1.getString(5);
-                        subcategory = rs1.getString(6);
-                        coverpic = rs1.getString(9);
-                        price = rs1.getInt(8);
-                                                %>
-                    <td>
-                        <table border="0px">
-                            <tr><td><img src="bookpics/<%=coverpic%>" height="150px" width="150px"></td></tr>
-                            <tr><td><%= name %></td></tr>
-                            <tr><td><%= author %></td></tr>
-                            <tr><td><a href="UserLibraryBookDetails.jsp?id=<%= rs1.getString(7) %>"> Click to get details </a></td></tr>
-                        </table>
-                    </td>
+    sc.close();   
+%>
+<%= inline %>
 
-                    <% j++; } %>
-                </tr>
-                <% } %>
-            </table>
-    <%    }  %>
-<%-- ------------------------------------------------------------------------------------------------------ --%>        
+<%-- -------------------------------------------------------------------------------------------- --%>
+
+<%-- ------------------------------ Recommendations: Item Based CF ------------------------------ --%>
+<%
+    url = new URL("http://127.0.0.1:5000/recommendations/itembased/"+useridpassed);
+    conn = (HttpURLConnection)url.openConnection();
+    conn.setRequestMethod("GET");
+    conn.connect();
+    responsecode = conn.getResponseCode();
+
+    inline = "";
+    sc = new Scanner(url.openStream());
+    while(sc.hasNext())
+    {
+        inline += sc.nextLine();
+    }
+    System.out.println(inline);
+
+    sc.close();   
+%>
+
+<%= useridpassed %>
+<%= inline %>
+<%-- -------------------------------------------------------------------------------------------- --%>        
 
             
             <% con.close(); %>
