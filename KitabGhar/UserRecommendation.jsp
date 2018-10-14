@@ -10,6 +10,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
         <title>KitabGhar | Recommendations</title>
         <%@include file="HeaderTop.jsp" %>
     </head>
@@ -27,20 +29,34 @@
 <%@page import="java.io.*" %>
 <%@page import="java.net.*" %>
 <%@page import="java.util.*" %>
+<%@page import="org.json.simple.parser.*" %>
+<%@page import="org.json.simple.*" %>
 <%! URL url;
-    HttpURLConnection conn;
+    HttpURLConnection connOBJ;
     int responsecode;
     String inline = "";
     Scanner sc;
-      %>   
-        
+    JSONParser parserOBJ;
+    JSONObject jsonOBJ;
+    JSONArray jsonLIST;
+    String qry = "";
+    String bookid = "";
+    String bookname = "";
+    String bookcover = "";
+    ResultSet rs;
+                        %>
+
+<div class="container-fluid" style="margin-right:5%;margin-left:5%;margin-top:2%;margin-bottom:2%">
+            
 <%-- ------------------------------ Popularity Recommendations On Sales ------------------------- --%>
+    
+    <div class="row" name="SalesRecommendations">
 <%    
     url = new URL("http://127.0.0.1:5000/recommendations/sales");
-    conn = (HttpURLConnection)url.openConnection();
-    conn.setRequestMethod("GET");
-    conn.connect();
-    responsecode = conn.getResponseCode();
+    connOBJ = (HttpURLConnection)url.openConnection();
+    connOBJ.setRequestMethod("GET");
+    connOBJ.connect();
+    responsecode = connOBJ.getResponseCode();
 
     inline="";
     sc = new Scanner(url.openStream());
@@ -50,20 +66,57 @@
     }
     System.out.println(inline);
 
+    parserOBJ = new JSONParser();
+    jsonOBJ = (JSONObject)parserOBJ.parse(inline);
+    jsonLIST = (JSONArray)jsonOBJ.get("recommendations");
+
+    qry = "select * from books where bookid = ?";
+    stm = con.prepareStatement(qry);
+
+    for(int i=0;i<jsonLIST.size();i++)
+    {
+        bookid = jsonLIST.get(i)+"";
+        System.out.println(jsonLIST.get(i));
+        stm.setString(1,bookid);
+        rs = stm.executeQuery();
+        if(rs.next())
+        {
+            bookname = rs.getString(1);
+            bookcover = rs.getString(9);
+        
+
+%>
+        <div class="col-md-2">
+            <%= bookname %>
+        </div>
+
+<br>
+
+
+<%    }
+    }
     sc.close();   
 %>
-<%= inline %>
+
+    </div>
 
 <%-- -------------------------------------------------------------------------------------------- --%>
+
+<br>
+<br>
+<hr>
+<br>
+<br>
 
 <%-- ------------------------------ Popularity Recommendations On Ratings ----------------------- --%>
-
+    
+    <div class="row" name="RatingsRecommendations">
 <%
     url = new URL("http://127.0.0.1:5000/recommendations/ratings");
-    conn = (HttpURLConnection)url.openConnection();
-    conn.setRequestMethod("GET");
-    conn.connect();
-    responsecode = conn.getResponseCode();
+    connOBJ = (HttpURLConnection)url.openConnection();
+    connOBJ.setRequestMethod("GET");
+    connOBJ.connect();
+    responsecode = connOBJ.getResponseCode();
 
     inline = "";
     sc = new Scanner(url.openStream());
@@ -73,19 +126,56 @@
     }
     System.out.println(inline);
 
+    parserOBJ = new JSONParser();
+    jsonOBJ = (JSONObject)parserOBJ.parse(inline);
+    jsonLIST = (JSONArray)jsonOBJ.get("recommendations");
+
+    qry = "select * from books where bookid = ?";
+    stm = con.prepareStatement(qry);
+
+    for(int i=0;i<jsonLIST.size();i++)
+    {
+        bookid = jsonLIST.get(i)+"";
+        System.out.println(jsonLIST.get(i));
+        stm.setString(1,bookid);
+        rs = stm.executeQuery();
+        if(rs.next())
+        {
+            bookname = rs.getString(1);
+            bookcover = rs.getString(9);
+
+%>
+
+        <div class="col-md-2">
+            <%= bookname %>
+        </div>
+<br>
+
+
+<%    }
+    }
+
     sc.close();   
 %>
-<%= inline %>
+
+    </div>
 
 <%-- -------------------------------------------------------------------------------------------- --%>
 
+<br>
+<br>
+<hr>
+<br>
+<br>
+
 <%-- ------------------------------ Recommendations: Item Based CF ------------------------------ --%>
+
 <%
     url = new URL("http://127.0.0.1:5000/recommendations/itembased/"+useridpassed);
-    conn = (HttpURLConnection)url.openConnection();
-    conn.setRequestMethod("GET");
-    conn.connect();
-    responsecode = conn.getResponseCode();
+    connOBJ = (HttpURLConnection)url.openConnection();
+    connOBJ.setRequestMethod("GET");
+    connOBJ.connect();
+    responsecode = connOBJ.getResponseCode();
 
     inline = "";
     sc = new Scanner(url.openStream());
@@ -95,15 +185,55 @@
     }
     System.out.println(inline);
 
+    parserOBJ = new JSONParser();
+    jsonOBJ = (JSONObject)parserOBJ.parse(inline);
+    jsonLIST = (JSONArray)jsonOBJ.get("recommendations");
+
+    qry = "select * from books where bookid = ?";
+    stm = con.prepareStatement(qry);
+
+    for(int rows=0;rows<3;rows++)
+    {
+       
+%>
+
+    <div class="row" name="CFRecommendations">
+<%
+
+        for(int i=0;i<6;i++)
+        {
+            bookid = jsonLIST.get(rows+i)+"";
+            System.out.println(jsonLIST.get(rows+i));
+            stm.setString(1,bookid);
+            rs = stm.executeQuery();
+            if(rs.next())
+            {
+                bookname = rs.getString(1);
+                bookcover = rs.getString(9);
+%>
+
+
+        <div class="col-md-2">
+            <%= bookname %>
+        </div>
+<br>
+
+<%    }
+    }
+
     sc.close();   
 %>
 
-<%= useridpassed %>
-<%= inline %>
+    </div>
+    <br>
+    <br>
+    
+<% } %>
 <%-- -------------------------------------------------------------------------------------------- --%>        
 
             
             <% con.close(); %>
+</div>
             <%@include file="Footer.jsp" %>
     </body>
 </html>
