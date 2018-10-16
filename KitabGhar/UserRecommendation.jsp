@@ -52,7 +52,8 @@
     <center><h3><b> Popular Items Based On Sales</b></h3></center>
     <br>
     <div class="row" name="SalesRecommendations">
-<%    
+<%  
+    try {
     url = new URL("http://127.0.0.1:5000/recommendations/sales");
     connOBJ = (HttpURLConnection)url.openConnection();
     connOBJ.setRequestMethod("GET");
@@ -100,12 +101,21 @@
 <br>
 
 
-<%    }
+<%          }
+        }
+    sc.close();
     }
-    sc.close();   
+    catch(Exception e){
+        System.out.println(e);    
 %>
+    <center><i>Recommender API Not Reachable</i></center>
+
+<%
+        }
+%>  
 
     </div>
+
 
 <%-- -------------------------------------------------------------------------------------------- --%>
 
@@ -119,6 +129,7 @@
     <div class="row" name="RatingsRecommendations">
     
 <%
+    try {
     url = new URL("http://127.0.0.1:5000/recommendations/ratings");
     connOBJ = (HttpURLConnection)url.openConnection();
     connOBJ.setRequestMethod("GET");
@@ -165,11 +176,18 @@
 <br>
 
 
-<%    }
+<%          }
+        }
+    sc.close();
     }
-
-    sc.close();   
+    catch(Exception e){
+        System.out.println(e);      
 %>
+    <center><i>Recommender API Not Reachable</i></center>
+
+<%
+        }
+%>  
 
     </div>
 
@@ -183,7 +201,7 @@
 <center><h2><b> Recommended For You </b></h2></center>
 <br>
 <br>
-<%
+<%  try {
     url = new URL("http://127.0.0.1:5000/recommendations/itembased/"+useridpassed);
     connOBJ = (HttpURLConnection)url.openConnection();
     connOBJ.setRequestMethod("GET");
@@ -237,17 +255,44 @@
         </div>
 <br>
 
-<%    }
-    }
-
-    sc.close();   
+<%          }
+        }    
 %>
-
     </div>
+
+<%
+    sc.close();
+    }
+}
+    catch(Exception e){
+        System.out.println(e);   
+%>
+    <i>Recommender API Not Reachable</i>
     <br>
     <br>
-    
-<% } %>
+    <hr>
+    <br>
+    <center><h3><b>SAMPLE LAYOUT : Redesigning Purposes</b></h3><center>
+    <br>
+    <div class="row" name="ForRedesigningTasks">
+        <% for(int i=0;i<6;i++) { %>
+            <div class="col-md-2">
+            <table border="0px">
+                <tr><td><img class="img-thumbnail" src="bookpics/default.jpg" height="150px" width="130px"></td></tr>
+                <tr><td>DEFAULT_NAME</td></tr>
+                <tr><td>DEFAULT_AUTHOR</td></tr>
+                <tr><td><a href="UserLibraryBookDetails.jsp"> Click to get details </a></td></tr>
+            </table>
+        </div>
+        <% } %>
+    </div>
+
+<%
+        }
+%> 
+
+    <br>
+    <br>
 <%-- -------------------------------------------------------------------------------------------- --%>        
 
             
