@@ -20,7 +20,6 @@
         <%@include file="connectionFile.jsp" %>
         
         <br>
-        <br>
         <hr>
         <br>
         
@@ -42,14 +41,16 @@
     String qry = "";
     String bookid = "";
     String bookname = "";
+    String authorname = "";
     String bookcover = "";
     ResultSet rs;
                         %>
 
-<div class="container-fluid" style="margin-right:5%;margin-left:5%;margin-top:2%;margin-bottom:2%">
+<div class="container-fluid" style="margin-right:2%;margin-left:2%;margin-top:2%;margin-bottom:2%">
             
 <%-- ------------------------------ Popularity Recommendations On Sales ------------------------- --%>
-    
+    <center><h3><b> Popular Items Based On Sales</b></h3></center>
+    <br>
     <div class="row" name="SalesRecommendations">
 <%    
     url = new URL("http://127.0.0.1:5000/recommendations/sales");
@@ -81,13 +82,19 @@
         rs = stm.executeQuery();
         if(rs.next())
         {
-            bookname = rs.getString(1);
+            bookname = rs.getString(2);
+            authorname = rs.getString(3);
             bookcover = rs.getString(9);
         
 
 %>
         <div class="col-md-2">
-            <%= bookname %>
+            <table border="0px">
+                <tr><td><img class="img-thumbnail" src="bookpics/<%=bookcover%>" height="150px" width="130px"></td></tr>
+                <tr><td><%= bookname %></td></tr>
+                <tr><td><%= authorname %></td></tr>
+                <tr><td><a href="UserLibraryBookDetails.jsp?id=<%=rs.getString(7) %>"> Click to get details </a></td></tr>
+            </table>
         </div>
 
 <br>
@@ -103,14 +110,14 @@
 <%-- -------------------------------------------------------------------------------------------- --%>
 
 <br>
-<br>
 <hr>
-<br>
 <br>
 
 <%-- ------------------------------ Popularity Recommendations On Ratings ----------------------- --%>
-    
+    <center><h3><b> Popular Items On User Ratings </b></h3></center>
+    <br>
     <div class="row" name="RatingsRecommendations">
+    
 <%
     url = new URL("http://127.0.0.1:5000/recommendations/ratings");
     connOBJ = (HttpURLConnection)url.openConnection();
@@ -141,13 +148,19 @@
         rs = stm.executeQuery();
         if(rs.next())
         {
-            bookname = rs.getString(1);
+            bookname = rs.getString(2);
+            authorname = rs.getString(3);
             bookcover = rs.getString(9);
 
 %>
 
         <div class="col-md-2">
-            <%= bookname %>
+            <table border="0px">
+                <tr><td><img class="img-thumbnail" src="bookpics/<%=bookcover%>" height="150px" width="130px"></td></tr>
+                <tr><td><%= bookname %></td></tr>
+                <tr><td><%= authorname %></td></tr>
+                <tr><td><a href="UserLibraryBookDetails.jsp?id=<%=rs.getString(7) %>"> Click to get details </a></td></tr>
+            </table>
         </div>
 <br>
 
@@ -163,13 +176,13 @@
 <%-- -------------------------------------------------------------------------------------------- --%>
 
 <br>
-<br>
 <hr>
-<br>
 <br>
 
 <%-- ------------------------------ Recommendations: Item Based CF ------------------------------ --%>
-
+<center><h2><b> Recommended For You </b></h2></center>
+<br>
+<br>
 <%
     url = new URL("http://127.0.0.1:5000/recommendations/itembased/"+useridpassed);
     connOBJ = (HttpURLConnection)url.openConnection();
@@ -202,19 +215,25 @@
 
         for(int i=0;i<6;i++)
         {
-            bookid = jsonLIST.get(rows+i)+"";
-            System.out.println(jsonLIST.get(rows+i));
+            bookid = jsonLIST.get(6*rows+i)+"";
+            System.out.println(jsonLIST.get(6*rows+i));
             stm.setString(1,bookid);
             rs = stm.executeQuery();
             if(rs.next())
             {
-                bookname = rs.getString(1);
+                bookname = rs.getString(2);
+                authorname = rs.getString(3);
                 bookcover = rs.getString(9);
 %>
 
 
         <div class="col-md-2">
-            <%= bookname %>
+            <table border="0px">
+                <tr><td><img class="img-thumbnail" src="bookpics/<%=bookcover%>" height="150px" width="130px"></td></tr>
+                <tr><td><%= bookname %></td></tr>
+                <tr><td><%= authorname %></td></tr>
+                <tr><td><a href="UserLibraryBookDetails.jsp?id=<%=rs.getString(7) %>"> Click to get details </a></td></tr>
+            </table>
         </div>
 <br>
 
