@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
         <link rel="stylesheet" type="text/css" href="styles/styles.css">
         <script src="js/jquery-3.3.1.js"></script>
+        <script src="js/main.js"></script>
 
         <script>
             $(document).ready(function(){
@@ -107,18 +108,18 @@
                         <form name="reviewForm" method="post" id="formRating" action="reviewSubmitServlet">
                             <br>
                             <div class="rating" style="margin-right: 100px;">
-                                <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
-                                <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
-                                <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
-                                <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
-                                <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+                                <span><input type="radio" name="rating" id="str5" onclick="enableSubmit();" value="5"><label for="str5"></label></span>
+                                <span><input type="radio" name="rating" id="str4" onclick="enableSubmit();" value="4"><label for="str4"></label></span>
+                                <span><input type="radio" name="rating" id="str3" onclick="enableSubmit();" value="3"><label for="str3"></label></span>
+                                <span><input type="radio" name="rating" id="str2" onclick="enableSubmit();" value="2"><label for="str2"></label></span>
+                                <span><input type="radio" name="rating" id="str1" onclick="enableSubmit();" value="1"><label for="str1"></label></span>
                             </div>
                             <br>
                             <div class="review-box" style="width:90%; height:200px; margin-top:50px;">
                                 <textarea type="text" name="reviewBox" id="review" rows="5" cols="50"></textarea>
                             </div>
                             <div class="btnSubmitReview" style="width:100%;">
-                                <input type="submit" name="btnSubmit" id="btnSubmit"/>
+                                <input type="submit" name="btnSubmit" id="btnSubmit" disabled="" />
                             </div>
                             
 
