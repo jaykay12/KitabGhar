@@ -1,6 +1,7 @@
 # KitabGhar
-An online eBook Portal (BookHouse) build on Java Servlets and JSP.
-Web Applicaton made on J2EE Platform.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/jaykay12/KitabGhar/blob/master/LICENSE)
+
+## An online eBook Portal build on J2EE Platform using Java Servlets and JSP.
 
 ## Technolgies Used:
  - J2EE: Java Servlets & JSP
@@ -15,7 +16,7 @@ Web Applicaton made on J2EE Platform.
 4. Open repository using `cd KitabGhar`
 5. Open MySQL in your workspace using `mysql -u [username] -p` & then create a DB for KitabGhar using `CREATE DATABASE kitabghar`
 6. Populate the DB using MySQL dump file using `mysql -u [username] -p kitabghar < KitabGhar.sql`
-7. Copy the KitabGhar-WebApp to the tomcat7 root folder using `sudo cp -R KitabGhar /var/lib/tomcat7/webapps/KitabGhar`
+7. Create a soft link of the web-app to the tomcat7 root folder using `sudo ln -s KitabGhar /var/lib/tomcat7/webapps/KitabGhar`
 8. Start Tomcat7 server using `sudo /etc/init.d/tomcat7 start`
 9. Hit `127.0.0.1:8080/KitabGhar` from your web browser.
 10. Explore the project, find bugs, raise issues & make pull requests. Happy Hacking :smile:
