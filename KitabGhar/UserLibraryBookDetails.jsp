@@ -107,12 +107,12 @@
                         <form name="reviewForm" method="post" id="formRating" action="reviewSubmitServlet">
                             <br>
                             <div class="rating" style="margin-right: 100px;">
-                                 <span><input type="radio" name="rating" id="str5" value="5"><img style="width: 25px; height: 25px" src="ProjectImages/star.png" /></span>
-                                 <span><input type="radio" name="rating" id="str4" value="4"><img style="width: 25px; height: 25px" src="ProjectImages/star.png" /></span>
-                                 <span><input type="radio" name="rating" id="str3" value="3"><img style="width: 25px; height: 25px" src="ProjectImages/star.png" /></span>
-                                 <span><input type="radio" name="rating" id="str2" value="2"><img style="width: 25px; height: 25px" src="ProjectImages/star.png" /></span>
-                                 <span><input type="radio" name="rating" id="str1" value="1"><img style="width: 25px; height: 25px" src="ProjectImages/star.png" /></span>
-                             </div>
+                                 <span><input type="radio" name="rating" id="str5" value="5"/> <label for="str5"> <img style="width: 25px; height: 25px" src="ProjectImages/star.png" /> </label> </span>
+                                 <span><input type="radio" name="rating" id="str4" value="4"/> <label for="str4"> <img style="width: 25px; height: 25px" src="ProjectImages/star.png" /> </label> </span>
+                                 <span><input type="radio" name="rating" id="str3" value="3"/> <label for="str3"> <img style="width: 25px; height: 25px" src="ProjectImages/star.png" /> </label> </span>
+                                 <span><input type="radio" name="rating" id="str2" value="2"/> <label for="str2"> <img style="width: 25px; height: 25px" src="ProjectImages/star.png" /> </label> </span>
+                                 <span><input type="radio" name="rating" id="str1" value="1"/> <label for="str1"> <img style="width: 25px; height: 25px" src="ProjectImages/star.png" /> </label> </span>
+                            </div>
                             <br>
                             <div class="review-box" style="width:90%; height:200px; margin-top:50px;">
                                 <textarea type="text" name="reviewBox" id="review" rows="5" cols="50"></textarea>
