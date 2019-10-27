@@ -20,3 +20,4 @@
 8. Start Tomcat7 server using `sudo /etc/init.d/tomcat7 start`
 9. Hit `127.0.0.1:8080/KitabGhar` from your web browser.
 10. Explore the project, find bugs, raise issues & make pull requests. Happy Hacking :smile:
+11. Thanks
